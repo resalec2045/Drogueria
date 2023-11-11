@@ -1,4 +1,4 @@
-package com.example.proyectodrogueria;
+package com.example.proyectodrogueria.viewcontroller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

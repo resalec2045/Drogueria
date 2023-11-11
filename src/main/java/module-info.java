@@ -3,7 +3,6 @@ module com.example.proyectodrogueria {
     requires javafx.fxml;
     requires java.sql;
 
-
-    opens com.example.proyectodrogueria to javafx.fxml;
-    exports com.example.proyectodrogueria;
+    exports com.example.proyectodrogueria.viewcontroller;
+    opens com.example.proyectodrogueria.viewcontroller to javafx.fxml;
 }
