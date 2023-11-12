@@ -8,14 +8,17 @@ public class Persona {
     private String segundoApellido;
     private String correoElectronico;
     private String direccion;
+    private String contrasenia;
 
-    public Persona(Integer id, String nombre, String primerApellido, String segundoApellido, String correoElectronico, String direccion) {
+
+    public Persona(Integer id, String nombre, String primerApellido, String segundoApellido, String correoElectronico, String direccion, String contrasenia) {
         this.id = id;
         this.nombre = nombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
         this.correoElectronico = correoElectronico;
         this.direccion = direccion;
+        this.contrasenia = contrasenia;
     }
 
     public Integer getId() {
@@ -64,5 +67,13 @@ public class Persona {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 }

@@ -1,0 +1,101 @@
+/*=============== Header ===============*/
+.header {
+
+}
+.header__container {
+    -fx-background-color: lightgray;
+    -fx-padding: 30px;
+}
+.nav__button {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+}
+.nav__button:hover {
+    -fx-background-color: purple;
+    -fx-border: 2px;
+    -fx-text-fill: white;
+}
+
+/*=============== Body ===============*/
+.body__container {
+    -fx-padding: 60.0 0.0 20.0;
+    -fx-padding: 30px;
+}
+.search__container {
+    -fx-background-color: white;
+}
+.search__container-field {
+    -fx-background-color: white;
+    -fx-border-width: 2px;
+    -fx-border-color: #333333;
+    -fx-border-radius: 12px;
+    -fx-padding: 16px;
+}
+.search__button {
+    -fx-background-color: lightgray;
+    -fx-text-fill: black;
+    -fx-border-radius: 12px;
+    -fx-padding: 16px;
+    -fx-cursor: hand;
+}
+.search__button:hover {
+    -fx-background-color: purple;
+    -fx-text-fill: white;
+    // TODO: Cuadrar el scale
+    // -fx-transform: scale(1.1, 1.1);
+}
+
+/*=============== Productos ===============*/
+.products__container {
+    -fx-border-width: 2px;
+    -fx-border-color: #333333;
+    -fx-border-radius: 12px;
+    -fx-background-color: lightgray;
+}
+
+.scroll-pane {
+    -fx-hbar-policy: never;
+    -fx-background-color: lightgray;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.products__container-box {
+    -fx-padding: 30px;
+    -fx-border-radius: 12px;
+}
+
+.product__box {
+    -fx-border-width: 2px;
+    -fx-border-color: #333333;
+    -fx-border-radius: 12px;
+}
+
+/*=============== Add Artist ===============*/
+
+.form__container {
+    -fx-background-color: lightgray;
+    -fx-border-radius: 30 30 0 0;
+    -fx-padding: 20;
+}
+
+.input {
+    -fx-background-color: lightgray;
+    -fx-border-width: 1px;
+    -fx-border-color: #333333;
+    -fx-border-radius: 12px;
+    -fx-box-sizing: border-box;
+}
+
+.send-button {
+    -fx-background-color: lightgray;
+    -fx-text-fill: black;
+    -fx-border-radius: 12px;
+    -fx-padding: 16px;
+    -fx-cursor: hand;
+    -fx-border-width: 2px;
+    -fx-border-color: #333333;
+}

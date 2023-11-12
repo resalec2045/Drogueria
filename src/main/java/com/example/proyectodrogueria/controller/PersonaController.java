@@ -19,4 +19,8 @@ public class PersonaController {
         return this.personaDao.listarPersonas();
     }
 
+    public Persona verificarLogin(String nombre, String contrasenia) {
+        return this.personaDao.verificarLogin(nombre, contrasenia);
+    }
+
 }
