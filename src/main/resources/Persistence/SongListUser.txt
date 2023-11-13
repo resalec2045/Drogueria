@@ -1,0 +1,5 @@
+357@@Ojitos Chiquitos@@king of kings@@2016@@3.49@@REGGAETON@@https://www.youtube.com/watch?v=rB7UZV_Qyz4@@src\main\resources\imagenes\caratulas\donOmar.png@@null
+079@@This Love@@V@@2009@@3.25@@ROCK@@https://www.youtube.com/watch?v=XPpTgCho5ZA @@src\main\resources\imagenes\caratulas\maroon5.png@@null
+579@@synthwave radio@@Na@@2000@@1.0@@PUNK@@https://www.youtube.com/watch?v=i43tkaTXtwI@@src\main\resources\imagenes\caratulas\synthwave radio.png@@null
+389@@Back to you@@NA@@2000@@1.0@@ROCK@@https://www.youtube.com/watch?v=U6pNMj8Uj7Y@@src\main\resources\imagenes\caratulas\Back to you.png@@null
+016@@CHORRITO PA LAS ANIMAS@@Sixdo@@2022@@3.45@@REGGAETON@@https://www.youtube.com/watch?v=sTfHzp8WP24&list=PLoXWIoqpqiK7kk_KtV2wT1UGK-dmLEr6K@@src\main\resources\imagenes\caratulas\sixdo.png@@Feid

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="19.0.2" class="java.beans.XMLDecoder">
+ <object class="Models.Storify" id="Storify0">
+  <void property="administrators">
+   <void method="add">
+    <object class="Models.Person.Administrator" id="Administrator0">
+     <void property="password">
+      <string>$aDmiN</string>
+     </void>
+     <void property="username">
+      <string>admin</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object idref="Administrator0"/>
+   </void>
+  </void>
+  <void property="artists">
+   <void method="add">
+    <object class="Models.Artist.Artist">
+     <void property="group">
+      <boolean>true</boolean>
+     </void>
+     <void property="id">
+      <string>123</string>
+     </void>
+     <void property="name">
+      <string>Camila</string>
+     </void>
+     <void property="nationality">
+      <string>Española</string>
+     </void>
+     <void property="songsList">
+      <object class="Models.Song.ArtistSongs.SongsArtistList" id="SongsList0">
+       <void class="Models.Song.ArtistSongs.SongsArtistList" method="getField">
+        <string>size</string>
+        <void method="set">
+         <object idref="SongsList0"/>
+         <int>1</int>
+        </void>
+       </void>
+       <void property="headSong">
+        <object class="Models.Song.ArtistSongs.NodeSong" id="NodeSong0">
+         <void property="data">
+          <object class="Models.Song.Song">
+           <void property="albumName">
+            <string>nada</string>
+           </void>
+           <void property="anio">
+            <int>202</int>
+           </void>
+           <void property="duration">
+            <double>4.4</double>
+           </void>
+           <void property="genre">
+            <object class="java.lang.Enum" id="Genre0" method="valueOf">
+             <class>Models.Song.Genre</class>
+             <string>ROCK</string>
+            </object>
+           </void>
+           <void property="id">
+            <string>233</string>
+           </void>
+           <void property="name">
+            <string>hola</string>
+           </void>
+           <void property="url">
+            <string>https://www.youtube.com/watch?v=e7P_0XKIqdI&amp;list=RDGMEMYvZjTda73N9EL0Qo2TnYngVMe7P_0XKIqdI&amp;start_radio=1</string>
+           </void>
+          </object>
+         </void>
+        </object>
+       </void>
+       <void property="tailSong">
+        <object idref="NodeSong0"/>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="songs">
+   <void method="add">
+    <object class="Models.Song.Song">
+     <void property="albumName">
+      <string>Aquel que habia muerto</string>
+     </void>
+     <void property="anio">
+      <int>2019</int>
+     </void>
+     <void property="duration">
+      <double>4.01</double>
+     </void>
+     <void property="genre">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>Models.Song.Genre</class>
+       <string>POP</string>
+      </object>
+     </void>
+     <void property="id">
+      <string>1</string>
+     </void>
+     <void property="name">
+      <string>Vico c</string>
+     </void>
+     <void property="url">
+      <string>https://www.youtube.com/watch?v=e7P_0XKIqdI&amp;list=RDGMEMYvZjTda73N9EL0Qo2TnYngVMe7P_0XKIqdI&amp;start_radio=1</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Models.Song.Song">
+     <void property="albumName">
+      <string>Aquel que habia muerto</string>
+     </void>
+     <void property="anio">
+      <int>2019</int>
+     </void>
+     <void property="duration">
+      <double>4.01</double>
+     </void>
+     <void property="genre">
+      <object idref="Genre0"/>
+     </void>
+     <void property="id">
+      <string>1</string>
+     </void>
+     <void property="name">
+      <string>Mariana</string>
+     </void>
+     <void property="url">
+      <string>https://www.youtube.com/watch?v=e7P_0XKIqdI&amp;list=RDGMEMYvZjTda73N9EL0Qo2TnYngVMe7P_0XKIqdI&amp;start_radio=1</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="users">
+   <void method="add">
+    <object class="Models.Person.User">
+     <void property="email">
+      <string>user1@gmail.com</string>
+     </void>
+     <void property="password">
+      <string>user1</string>
+     </void>
+     <void property="username">
+      <string>user</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
