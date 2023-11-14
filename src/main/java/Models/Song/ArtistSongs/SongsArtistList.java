@@ -1,7 +1,7 @@
 package Models.Song.ArtistSongs;
 
 import Models.Artist.Artist;
-import Models.Song.Song;
+import Models.Song.Producto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class SongsArtistList implements Serializable {
 
     public SongsArtistList() { }
 
-    public void add(Song data) {
+    public void add(Producto data) {
         NodeSong newNode = new NodeSong(data);
         if (tailSong == null) {
             headSong = tailSong = newNode;
@@ -29,15 +29,15 @@ public class SongsArtistList implements Serializable {
     }
 
     //metodo para convertir un arraylist a una lista doblemente enlazada
-    public void arrayToDoubleLinked(ArrayList<Song> songs) {
-        for (Song song : songs) {
+    public void arrayToDoubleLinked(ArrayList<Producto> songs) {
+        for (Producto song : songs) {
             add(song);
         }
     }
 
     //metodo para buscar las canciones de un artista, recibe su nombre y retorna un arraylist con las canciones
-    public ArrayList<Song> searchSongsByNameArtist (String nameArtist) {
-        ArrayList<Song> songs = new ArrayList<>();
+    public ArrayList<Producto> searchSongsByNameArtist (String nameArtist) {
+        ArrayList<Producto> songs = new ArrayList<>();
         NodeSong current = headSong;
         while (current != null) {
             if (current.getData().getNameArtist().equals(nameArtist)) {

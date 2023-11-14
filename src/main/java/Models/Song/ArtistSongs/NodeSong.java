@@ -1,15 +1,15 @@
 package Models.Song.ArtistSongs;
 
-import Models.Song.Song;
+import Models.Song.Producto;
 
 public class NodeSong {
-    private Song data;
+    private Producto data;
     private NodeSong prev;
     private NodeSong next;
 
     public NodeSong() { }
 
-    public NodeSong(Song data) {
+    public NodeSong(Producto data) {
         this.data = data;
     }
 
@@ -25,7 +25,7 @@ public class NodeSong {
         this.next = next;
     }
 
-    public Song getData() {
+    public Producto getData() {
         return data;
     }
 

@@ -43,7 +43,7 @@
        <void property="headSong">
         <object class="Models.Song.ArtistSongs.NodeSong" id="NodeSong0">
          <void property="data">
-          <object class="Models.Song.Song">
+          <object class="Models.Song.Producto">
            <void property="albumName">
             <string>nada</string>
            </void>
@@ -82,7 +82,7 @@
   </void>
   <void property="songs">
    <void method="add">
-    <object class="Models.Song.Song">
+    <object class="Models.Song.Producto">
      <void property="albumName">
       <string>Aquel que habia muerto</string>
      </void>
@@ -110,7 +110,7 @@
     </object>
    </void>
    <void method="add">
-    <object class="Models.Song.Song">
+    <object class="Models.Song.Producto">
      <void property="albumName">
       <string>Aquel que habia muerto</string>
      </void>

@@ -2,7 +2,7 @@ package Models;
 import Models.Artist.Artist;
 import Models.Person.Administrator;
 import Models.Person.User;
-import Models.Song.Song;
+import Models.Song.Producto;
 import Models.Person.Persona;
 
 import java.io.Serializable;
@@ -20,20 +20,20 @@ public class Storify implements Serializable {
     private ArrayList<User> users =  new ArrayList<>();
     private ArrayList<Administrator> administrators = new ArrayList<>();
     private ArrayList<Artist> artists = new ArrayList<>();
-    private ArrayList<Song> songs = new ArrayList<>();
+    private ArrayList<Producto> songs = new ArrayList<>();
 
     public Storify() { }
 
 
-    public ArrayList<Song> getSongs() {
+    public ArrayList<Producto> getSongs() {
         return songs;
     }
 
-    public void setSongs(ArrayList<Song> song) {
+    public void setSongs(ArrayList<Producto> song) {
         this.songs = song;
     }
 
-    public void setSong(Song song) {
+    public void setSong(Producto song) {
         this.songs.add(song);
     }
 

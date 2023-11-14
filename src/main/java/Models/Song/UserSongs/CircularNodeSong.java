@@ -1,25 +1,25 @@
 package Models.Song.UserSongs;
 
-import Models.Song.Song;
+import Models.Song.Producto;
 
 import java.io.Serializable;
 
 public class CircularNodeSong implements Serializable {
     public static final long serialVersionUID = 1L;
-    private Song song;
+    private Producto song;
     private CircularNodeSong next;
     public CircularNodeSong() {}
 
-    public CircularNodeSong(Song song) {
+    public CircularNodeSong(Producto song) {
         this.song = song;
         this.next = null;
     }
 
-    public Song getSong() {
+    public Producto getSong() {
         return song;
     }
 
-    public void setSong(Song song) {
+    public void setSong(Producto song) {
         this.song = song;
     }
 

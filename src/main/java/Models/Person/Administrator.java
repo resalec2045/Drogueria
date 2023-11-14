@@ -3,7 +3,7 @@ package Models.Person;
 import Exceptions.SongsExceptions;
 import Exceptions.UserExceptions;
 import Models.Song.Genre;
-import Models.Song.Song;
+import Models.Song.Producto;
 import Services.IAdministratorService;
 
 import java.io.File;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Administrator implements Serializable, IAdministratorService {
-    public ArrayList<Song> songs =  new ArrayList<>();
+    public ArrayList<Producto> songs =  new ArrayList<>();
     public static final long serialVersionUID = 1L;
     private String username;
     private String password;
@@ -40,9 +40,9 @@ public class Administrator implements Serializable, IAdministratorService {
     }
 
     @Override
-    public Song createSong(String id, String name, String albumName, File caratula, int anio,
-                           double duration, Genre genre, String url, String nameAritst) throws SongsExceptions {
-        Song newSong = new Song(id, name, albumName, caratula, anio, duration, genre, url, nameAritst);
+    public Producto createSong(String id, String name, String albumName, File caratula, int anio,
+                               double duration, Genre genre, String url, String nameAritst) throws SongsExceptions {
+        Producto newSong = new Producto(id, name, albumName, caratula, anio, duration, genre, url, nameAritst);
         this.songs.forEach(song -> {
             if(song.getName().equals(newSong.getName())) {
                 try {

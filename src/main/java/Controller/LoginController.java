@@ -6,7 +6,6 @@ import Exceptions.UserExceptions;
 import Models.*;
 import Models.Person.Administrator;
 import Models.Person.User;
-import Persistence.Persistence;
 import Utils.CustomAlert;
 import Utils.ModelFactoryController;
 import Utils.getStage;
@@ -18,8 +17,6 @@ import Models.Person.Persona;
 
 import java.io.IOException;
 
-import static Persistence.Persistence.loadSongs;
-import static Persistence.Persistence.loadSongsUser;
 
 public class LoginController {
     ModelFactoryController modelFactoryController;
@@ -30,11 +27,11 @@ public class LoginController {
     public LoginController(ModelFactoryController modelFactoryController) throws IOException, UserExceptions, SongsExceptions {
         this.modelFactoryController = modelFactoryController;
         modelFactoryController.setStorify(new Storify());
-        modelFactoryController.getStorify().setUsers(Persistence.loadUsers());
-        modelFactoryController.getStorify().setAdministrators(Persistence.loadAdministrator());
-        modelFactoryController.getStorify().setSongs(loadSongs());
-        modelFactoryController.setFavoriteSongs(loadSongsUser());
-        modelFactoryController.getStorify().setArtists(Persistence.loadArtist());
+//        modelFactoryController.getStorify().setUsers(Persistence.loadUsers());
+//        modelFactoryController.getStorify().setAdministrators(Persistence.loadAdministrator());
+//        modelFactoryController.getStorify().setSongs(loadSongs());
+//        modelFactoryController.setFavoriteSongs(loadSongsUser());
+//        modelFactoryController.getStorify().setArtists(Persistence.loadArtist());
 //        if (modelFactoryController.getStorify().getUsers().size() == 0) {
 //            initializeUsers();
 //        }

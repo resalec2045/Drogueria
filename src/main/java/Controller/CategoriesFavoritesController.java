@@ -1,16 +1,11 @@
 package Controller;
 
-import Models.Artist.Artist;
-import Models.Song.Song;
 import Models.Storify;
 import Utils.ModelFactoryController;
 import Utils.NavBar;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class CategoriesFavoritesController {
 
@@ -32,55 +27,55 @@ public class CategoriesFavoritesController {
     @FXML
     protected void initialize() {
         btnCategoriesFavorites.setStyle(pressedStyle);
-        genderPopular();
-        artistPupular();
+//        genderPopular();
+//        artistPupular();
     }
 
     public void genderPopular() {
 
-        HashMap<String, Integer> generoRecuento = new HashMap<>();
-
-        for (Song song : storify.getSongs()) {
-            String genero = song.getGenre().name();
-
-            if (generoRecuento.containsKey(genero)) {
-                int recuento = generoRecuento.get(genero);
-                generoRecuento.put(genero, recuento + 1);
-            } else {
-                generoRecuento.put(genero, 1);
-            }
-        }
-
-        String generoMasFrecuente = "";
-        int maxRecuento = 0;
-
-        for (String genero : generoRecuento.keySet()) {
-            int recuento = generoRecuento.get(genero);
-
-            if (recuento > maxRecuento) {
-                generoMasFrecuente = genero;
-                maxRecuento = recuento;
-            }
-        }
-
-        genderPopularField.setText(generoMasFrecuente);
+//        HashMap<String, Integer> generoRecuento = new HashMap<>();
+//
+//        for (Song song : storify.getSongs()) {
+//            String genero = song.getGenre().name();
+//
+//            if (generoRecuento.containsKey(genero)) {
+//                int recuento = generoRecuento.get(genero);
+//                generoRecuento.put(genero, recuento + 1);
+//            } else {
+//                generoRecuento.put(genero, 1);
+//            }
+//        }
+//
+//        String generoMasFrecuente = "";
+//        int maxRecuento = 0;
+//
+//        for (String genero : generoRecuento.keySet()) {
+//            int recuento = generoRecuento.get(genero);
+//
+//            if (recuento > maxRecuento) {
+//                generoMasFrecuente = genero;
+//                maxRecuento = recuento;
+//            }
+//        }
+//
+//        genderPopularField.setText(generoMasFrecuente);
     }
 
     public void artistPupular() {
 
-        modelFactoryController = ModelFactoryController.getInstance();
-        ArrayList<Artist> artists = modelFactoryController.getStorify().getArtists();
-
-        Artist artistaConMayorContador = artists.get(0);
-
-        for (int i = 1; i < artists.size(); i++) {
-            Artist artistaActual = artists.get(i);
-            if (artistaActual.getCounter() > artistaConMayorContador.getCounter()) {
-                artistaConMayorContador = artistaActual;
-            }
-        }
-
-        artistPopularField.setText(artistaConMayorContador.getName());
+//        modelFactoryController = ModelFactoryController.getInstance();
+//        ArrayList<Artist> artists = modelFactoryController.getStorify().getArtists();
+//
+//        Artist artistaConMayorContador = artists.get(0);
+//
+//        for (int i = 1; i < artists.size(); i++) {
+//            Artist artistaActual = artists.get(i);
+//            if (artistaActual.getCounter() > artistaConMayorContador.getCounter()) {
+//                artistaConMayorContador = artistaActual;
+//            }
+//        }
+//
+//        artistPopularField.setText(artistaConMayorContador.getName());
 
     }
 

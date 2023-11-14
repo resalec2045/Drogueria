@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import java.io.File;
 import java.io.Serializable;
 
-public class Song extends FXMLLoader implements Serializable {
+public class Producto extends FXMLLoader implements Serializable {
     public static final long serialVersionUID = 1L;
     private String nameArtist;
     private String albumName;
@@ -17,10 +17,10 @@ public class Song extends FXMLLoader implements Serializable {
     private String id;
     private int anio;
 
-    public Song() { }
+    public Producto() { }
 
-    public Song(String id, String name, String albumName, File caratula, int anio, double duration, Genre genre, String url,
-                String nameArtist) {
+    public Producto(String id, String name, String albumName, File caratula, int anio, double duration, Genre genre, String url,
+                    String nameArtist) {
         this.id = id;
         this.name = name;
         this.albumName = albumName;

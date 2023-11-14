@@ -1,7 +1,8 @@
 package Utils;
 
 import Models.Artist.Artist;
-import Models.Song.Song;
+//import Models.Song.Producto;
+import Models.Products.Producto;
 import Models.Storify;
 import Services.IModelFactoryService;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -11,11 +12,11 @@ import javafx.collections.ObservableList;
 public class ModelFactoryController implements IModelFactoryService {
     private Storify storify;
 
-    private Song currentSong;
+    private Producto currentSong;
 
     private Artist currentArtist;
 
-    private ObservableList<Song> favoriteSongs = FXCollections.observableArrayList();
+    private ObservableList<Producto> favoriteSongs = FXCollections.observableArrayList();
 
     ObservableList<Artist> arrayListArtist = FXCollections.observableArrayList();
 
@@ -38,20 +39,20 @@ public class ModelFactoryController implements IModelFactoryService {
         this.storify = storify;
     }
 
-    public Song getCurrentSong() {
+    public Producto getCurrentSong() {
         return currentSong;
     }
 
-    public void setCurrentSong(Song currentSong) {
+    public void setCurrentSong(Producto currentSong) {
         this.currentSong = currentSong;
     }
 
 
-    public ObservableList<Song> getFavoriteSongs() {
+    public ObservableList<Producto> getFavoriteSongs() {
         return favoriteSongs;
     }
 
-    public void setFavoriteSongs(ObservableList<Song> favoriteSongs) {
+    public void setFavoriteSongs(ObservableList<Producto> favoriteSongs) {
         this.favoriteSongs = favoriteSongs;
     }
 

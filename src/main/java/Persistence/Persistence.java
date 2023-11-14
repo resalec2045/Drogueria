@@ -1,15 +1,13 @@
 package Persistence;
 
 import Exceptions.UserExceptions;
-import Models.*;
 import Models.Artist.Artist;
 import Models.Person.Administrator;
 import Models.Person.User;
 import Models.Song.Genre;
-import Models.Song.Song;
+import Models.Song.Producto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.image.Image;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -54,13 +52,13 @@ public class Persistence {
         return users;
     }
 
-    public static ArrayList<Song> loadSongs() throws FileNotFoundException, IOException {
-        ArrayList<Song> songs =new ArrayList<>();
+    public static ArrayList<Producto> loadSongs() throws FileNotFoundException, IOException {
+        ArrayList<Producto> songs =new ArrayList<>();
         ArrayList<String> content = UtilFile.readFile(ROUTE_FILE_SONGS);
         String line = "";
         for (int i = 0; i < content.size(); i++) {
             line = content.get(i);
-            Song song = new Song();
+            Producto song = new Producto();
             song.setId(line.split("@@")[0]);
             song.setName(line.split("@@")[1]);
             song.setAlbumName(line.split("@@")[2]);
@@ -75,13 +73,13 @@ public class Persistence {
         return songs;
     }
 
-    public static ObservableList<Song> loadSongsUser() throws FileNotFoundException, IOException {
-        ObservableList<Song> songs = FXCollections.observableArrayList();
+    public static ObservableList<Producto> loadSongsUser() throws FileNotFoundException, IOException {
+        ObservableList<Producto> songs = FXCollections.observableArrayList();
         ArrayList<String> content = UtilFile.readFile(ROUTE_FILE_SONGSUSER);
         String line = "";
         for (int i = 0; i < content.size(); i++) {
             line = content.get(i);
-            Song song = new Song();
+            Producto song = new Producto();
             song.setId(line.split("@@")[0]);
             song.setName(line.split("@@")[1]);
             song.setAlbumName(line.split("@@")[2]);
@@ -112,9 +110,9 @@ public class Persistence {
         UtilFile.saveFile(ROUTE_FILE_ADMINISTRATOR, content, false);
     }
 
-    public static void saveSongs(ArrayList<Song> songs) throws IOException, UserExceptions {
+    public static void saveSongs(ArrayList<Producto> songs) throws IOException, UserExceptions {
         String content = "";
-        for(Song song: songs) {
+        for(Producto song: songs) {
             content+= song.getId() + "@@" + song.getName() + "@@" + song.getAlbumName() + "@@"
                     + song.getAnio() + "@@" + song.getDuration() + "@@" + song.getGenre() + "@@"
                     + song.getUrl() + "@@" + song.getCaratula() + "@@" + song.getNameArtist();
@@ -123,11 +121,11 @@ public class Persistence {
         UtilFile.saveFile(ROUTE_FILE_SONGS, content, false);
     }
 
-    public static void saveSongUser(ObservableList<Song> songs) throws IOException, UserExceptions {
+    public static void saveSongUser(ObservableList<Producto> songs) throws IOException, UserExceptions {
         String content = "";
 
 
-        for(Song song: songs) {
+        for(Producto song: songs) {
             content+= song.getId() + "@@" + song.getName() + "@@" + song.getAlbumName() + "@@"
                     + song.getAnio() + "@@" + song.getDuration() + "@@" + song.getGenre() + "@@"
                     + song.getUrl() + "@@" + song.getCaratula() + "@@" + song.getNameArtist();

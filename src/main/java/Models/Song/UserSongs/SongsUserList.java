@@ -1,6 +1,6 @@
 package Models.Song.UserSongs;
 
-import Models.Song.Song;
+import Models.Song.Producto;
 import Utils.ModelFactoryController;
 
 import java.io.Serializable;
@@ -16,7 +16,7 @@ public class SongsUserList implements Serializable {
         this.head = null;
     }
 
-    public void add(Song song) {
+    public void add(Producto song) {
         CircularNodeSong nuevoNodo = new CircularNodeSong(song);
         if (head == null) {
             head = nuevoNodo;
@@ -31,7 +31,7 @@ public class SongsUserList implements Serializable {
         }
     }
 
-    public void remove(Song song) {
+    public void remove(Producto song) {
         if (head == null) {
             return;
         }
@@ -55,15 +55,15 @@ public class SongsUserList implements Serializable {
     }
 
 
-    public void arrayToCircular(ArrayList<Song> songs) {
-        for (Song song : songs) {
+    public void arrayToCircular(ArrayList<Producto> songs) {
+        for (Producto song : songs) {
             add(song);
         }
     }
 
     //metodo de lista circular a arraylist
-    public ArrayList<Song> circularToArray() {
-        ArrayList<Song> songs = new ArrayList<>();
+    public ArrayList<Producto> circularToArray() {
+        ArrayList<Producto> songs = new ArrayList<>();
         CircularNodeSong current = head;
         do {
             songs.add(current.getSong());
@@ -76,7 +76,7 @@ public class SongsUserList implements Serializable {
 
         modelFactoryController = ModelFactoryController.getInstance();
 
-        ArrayList<Song> songs = modelFactoryController.getStorify().getSongs();
+        ArrayList<Producto> songs = modelFactoryController.getStorify().getSongs();
 
         SongsUserList songsUserList = new SongsUserList();
 
@@ -126,9 +126,9 @@ public class SongsUserList implements Serializable {
         return "No se encontró el video";
     }
 
-    public Song searchSong(String id){
+    public Producto searchSong(String id){
 
-        ArrayList<Song> songs = new ArrayList<>();
+        ArrayList<Producto> songs = new ArrayList<>();
 
         if (head == null) {
             return null;
@@ -150,7 +150,7 @@ public class SongsUserList implements Serializable {
 
         modelFactoryController = ModelFactoryController.getInstance();
 
-        ArrayList<Song> songs = modelFactoryController.getStorify().getSongs();
+        ArrayList<Producto> songs = modelFactoryController.getStorify().getSongs();
 
         arrayToCircular(songs);
 
