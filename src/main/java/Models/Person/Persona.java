@@ -1,4 +1,4 @@
-package modelo;
+package Models.Person;
 
 public class Persona {
 

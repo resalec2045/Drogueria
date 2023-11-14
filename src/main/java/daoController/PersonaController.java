@@ -2,7 +2,7 @@ package daoController;
 
 import dao.PersonaDao;
 import factory.ConnectionFactory;
-import modelo.Persona;
+import Models.Person.Persona;
 
 import java.util.List;
 

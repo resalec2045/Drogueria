@@ -16,6 +16,7 @@ public class RunApplication extends Application {
         stage.setTitle("¡Bienvenid@!");
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {

@@ -3,6 +3,8 @@ import Models.Artist.Artist;
 import Models.Person.Administrator;
 import Models.Person.User;
 import Models.Song.Song;
+import Models.Person.Persona;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -13,7 +15,7 @@ public class Storify implements Serializable {
     public static int viewArtistId = 1;
     private boolean isUser;
     private boolean isAministrator;
-    private User user;
+    private Persona user;
     private Administrator administrator;
     private ArrayList<User> users =  new ArrayList<>();
     private ArrayList<Administrator> administrators = new ArrayList<>();
@@ -56,7 +58,7 @@ public class Storify implements Serializable {
     }
 
 
-    public void setUser(User user) {
+    public void setUser(Persona user) {
         this.user = user;
     }
 

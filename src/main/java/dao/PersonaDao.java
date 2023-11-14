@@ -1,7 +1,7 @@
 package dao;
 
 
-import modelo.Persona;
+import Models.Person.Persona;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -79,7 +79,7 @@ public class PersonaDao {
             throw new RuntimeException(e);
         }
 
-        return new Persona();
+        return null;
     }
 
 }
