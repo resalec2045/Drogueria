@@ -1,6 +1,6 @@
 package Models.Reportes;
 
-public class InformeVentas {
+public class Venta {
 
     int codproducto;
     String producto;
@@ -8,7 +8,7 @@ public class InformeVentas {
     int cantidad_vendida;
     int total_venta;
 
-    public InformeVentas(int codproducto, String producto, String categoria, int cantidad_vendida, int total_venta) {
+    public Venta(int codproducto, String producto, String categoria, int cantidad_vendida, int total_venta) {
         this.codproducto = codproducto;
         this.producto = producto;
         this.categoria = categoria;

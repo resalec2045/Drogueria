@@ -5,14 +5,12 @@ public class Producto {
     private Integer codproducto;
     private String nombre;
     private String descripcion;
-    private Integer inventario;
     private Double precio;
 
-    public Producto(Integer codproducto, String nombre, String descripcion, Integer inventario, Double precio) {
+    public Producto(Integer codproducto, String nombre, String descripcion, Double precio) {
         this.codproducto = codproducto;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.inventario = inventario;
         this.precio = precio;
     }
 
@@ -43,13 +41,6 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public Integer getInventario() {
-        return inventario;
-    }
-
-    public void setInventario(Integer inventario) {
-        this.inventario = inventario;
-    }
 
     public Double getPrecio() {
         return precio;
@@ -58,4 +49,14 @@ public class Producto {
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "codproducto=" + codproducto +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", precio=" + precio +
+                '}';
+    }
+
 }

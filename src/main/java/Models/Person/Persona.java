@@ -79,4 +79,19 @@ public class Persona {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
+
+    //Realiza el tostring
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", primerApellido='" + primerApellido + '\'' +
+                ", segundoApellido='" + segundoApellido + '\'' +
+                ", correoElectronico='" + correoElectronico + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", contrasenia='" + contrasenia + '\'' +
+                '}';
+    }
+
 }

@@ -3,6 +3,8 @@ package Utils;
 //import Models.Artist.Artist;
 //import Models.Song.Producto;
 import Models.Producto.Producto;
+import Models.Reportes.Domicilio;
+import Models.Reportes.Factura;
 import Models.Storify;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
@@ -11,13 +13,13 @@ import javafx.collections.ObservableList;
 public class ModelFactoryController {
     private Storify storify;
 
-    private Producto currentSong;
+    private Producto currentProduct;
 
-//    private Artist currentArtist;
+    private Factura currentFacturas;
+    private Domicilio currentDomilicio;
 
     private ObservableList<Producto> favoriteSongs = FXCollections.observableArrayList();
 
-//    ObservableList<Artist> arrayListArtist = FXCollections.observableArrayList();
 
     public SimpleBooleanProperty isArtist = new SimpleBooleanProperty(false);
 
@@ -38,12 +40,12 @@ public class ModelFactoryController {
         this.storify = storify;
     }
 
-    public Producto getCurrentSong() {
-        return currentSong;
+    public Producto getCurrentProduct() {
+        return currentProduct;
     }
 
-    public void setCurrentSong(Producto currentSong) {
-        this.currentSong = currentSong;
+    public void setCurrentProduct(Producto currentProduct) {
+        this.currentProduct = currentProduct;
     }
 
 
@@ -55,12 +57,19 @@ public class ModelFactoryController {
         this.favoriteSongs = favoriteSongs;
     }
 
-//    public Artist getCurrentArtist() {
-//        return currentArtist;
-//    }
-//
-//    public void setCurrentArtist(Artist currentArtist) {
-//        this.currentArtist = currentArtist;
-//    }
+    public Factura getCurrentFacturas() {
+        return currentFacturas;
+    }
 
+    public void setCurrentFacturas(Factura currentVentas) {
+        this.currentFacturas = currentVentas;
+    }
+
+    public Domicilio getCurrentDomilicio() {
+        return currentDomilicio;
+    }
+
+    public void setCurrentDomilicio(Domicilio currentDomilicio) {
+        this.currentDomilicio = currentDomilicio;
+    }
 }

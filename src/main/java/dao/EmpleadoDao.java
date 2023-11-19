@@ -33,7 +33,7 @@ public class EmpleadoDao {
                     "    empleado e\n" +
                     "    JOIN persona p ON e.persona_idpersona = p.idpersona\n" +
                     "ORDER BY\n" +
-                    "    e.persona_idpersona";
+                    "    e.persona_idpersona ASC";
 
             final PreparedStatement statement = con
                     .prepareStatement(sql);

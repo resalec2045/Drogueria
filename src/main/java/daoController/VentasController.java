@@ -1,6 +1,6 @@
 package daoController;
 
-import Models.Reportes.InformeVentas;
+import Models.Reportes.Venta;
 import Models.Reportes.VentasMes;
 import dao.VentasDao;
 import factory.ConnectionFactory;
@@ -20,7 +20,7 @@ public class VentasController {
         return this.ventasDao.listarVentasPorMes();
     }
 
-    public List<InformeVentas> listarInformesVentas() {
+    public List<Venta> listarInformesVentas() {
         return this.ventasDao.listarInformeVentas();
     }
 

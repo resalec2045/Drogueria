@@ -29,7 +29,7 @@ public class ProductoController {
         return this.productoDao.listarInventario();
     }
 
-    public List<CantidadProductoStock> listarEmpleadoSalario() {
+    public List<CantidadProductoStock> listarCantidadProductoStock() {
         return this.productoDao.listarCantidadProductoStock();
     }
 

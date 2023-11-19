@@ -34,8 +34,6 @@ public class ProductCardViewController {
     @FXML
     private Text precio;
 
-    @FXML
-    private Text inventario;
 
     @FXML
     private Text codProducto;
@@ -52,7 +50,7 @@ public class ProductCardViewController {
     @FXML
     void initialize() throws IOException, StorifyExceptions {
         modelFactoryController = ModelFactoryController.getInstance();
-        idProducto.setId(""+modelFactoryController.getCurrentSong().getCodproducto());
+        idProducto.setId(""+modelFactoryController.getCurrentProduct().getCodproducto());
 //        if (modelFactoryController.isArtist.getValue()) {
 //            setArtist();
 //        } else {
@@ -76,15 +74,14 @@ public class ProductCardViewController {
 //    }
 
     private void setProducto() {
-        Producto song = modelFactoryController.getCurrentSong();
-        nombreProducto.setText(song.getNombre());
+        Producto product = modelFactoryController.getCurrentProduct();
+        nombreProducto.setText(product.getNombre());
         String path = "file:" + "src/main/resources/imagenes/caratulas/producto.png";
         Image image1 = new Image(path);
         image.setImage(image1);
-        descripcion.setText("Codigo: " + song.getDescripcion());
-        precio.setText("Inventario: " + song.getInventario());
-        inventario.setText("Precio: " + song.getPrecio() + "");
-        codProducto.setText("Codigo del producto: " + song.getCodproducto() + "");
+        descripcion.setText("Codigo: " + product.getDescripcion());
+        precio.setText("Precio: " + product.getPrecio() + "");
+        codProducto.setText("Codigo del producto: " + product.getCodproducto() + "");
 //
 //        if(modelFactoryController.sectionCurrent.equals("Favoritos")) {
 //            btnFavoritos.setText("Eliminar");

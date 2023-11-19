@@ -38,7 +38,6 @@ public class ProductoDao {
                                 resultSet.getInt("codproducto"),
                                 resultSet.getString("nombre"),
                                 resultSet.getString("descripcion"),
-                                resultSet.getInt("inventario"),
                                 resultSet.getDouble("precio")));
                     }
                 }
@@ -69,7 +68,6 @@ public class ProductoDao {
                                 resultSet.getInt("codproducto"),
                                 resultSet.getString("nombre"),
                                 resultSet.getString("descripcion"),
-                                resultSet.getInt("inventario"),
                                 resultSet.getDouble("precio")));
                     }
                 }
@@ -81,7 +79,6 @@ public class ProductoDao {
         return resultado;
     }
 
-//    Lista inventario con producto
     public List<InventarioProducto> listarInventario() {
 
         List<InventarioProducto> resultado = new ArrayList<>();
@@ -102,7 +99,6 @@ public class ProductoDao {
                     while (resultSet.next()) {
                         resultado.add(new InventarioProducto(
                                 resultSet.getInt("codinventario"),
-                                resultSet.getInt("cantidadstock"),
                                 resultSet.getString("nombreproducto"),
                                 resultSet.getString("fecha"),
                                 resultSet.getString("responsable"),
@@ -124,14 +120,20 @@ public class ProductoDao {
         List<CantidadProductoStock> resultado = new ArrayList<>();
 
         try {
+
+//        TODO: Segun yo la consulta que deberia ir
             String sql = "SELECT\n" +
                     "    i.codinventario,\n" +
-                    "    i.nombreproducto AS producto,\n" +
-                    "    i.cantidadstock AS cantidad_en_stock\n" +
+                    "    p.nombre AS producto,\n" +
+                    "    ip.cantidad AS cantidad_en_stock\n" +
                     "FROM\n" +
-                    "    inventario i\n" +
+                    "    inventarioproducto ip " +
+                    "INNER JOIN" +
+                    "    inventario i ON i.codinventario = ip.inventario_codinventario " +
+                    "INNER JOIN" +
+                    "    producto p ON p.codproducto = ip.producto_codproducto " +
                     "ORDER BY\n" +
-                    "    i.codinventario";
+                    "    cantidad_en_stock ASC";
 
             final PreparedStatement statement = con
                     .prepareStatement(sql);

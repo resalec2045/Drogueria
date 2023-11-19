@@ -108,7 +108,7 @@ public class LoginController {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("homePage-view.fxml"));
         Scene scene = null;
         try {
-            scene = new Scene(fxmlLoader.load(), 1283, 698);
+            scene = new Scene(fxmlLoader.load(), 950, 698);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

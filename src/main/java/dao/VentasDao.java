@@ -1,6 +1,6 @@
 package dao;
 
-import Models.Reportes.InformeVentas;
+import Models.Reportes.Venta;
 import Models.Reportes.VentasMes;
 
 import java.sql.Connection;
@@ -49,9 +49,9 @@ public class VentasDao {
         return resultado;
     }
 
-    public List<InformeVentas> listarInformeVentas() {
+    public List<Venta> listarInformeVentas() {
 
-        List<InformeVentas> resultado = new ArrayList<>();
+        List<Venta> resultado = new ArrayList<>();
 
         try {
             String sql = "SELECT\n" +
@@ -78,7 +78,7 @@ public class VentasDao {
 
                 try (resultSet) {
                     while (resultSet.next()) {
-                        resultado.add(new InformeVentas(
+                        resultado.add(new Venta(
                                 resultSet.getInt("codproducto"),
                                 resultSet.getString("producto"),
                                 resultSet.getString("categoria"),

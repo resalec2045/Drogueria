@@ -49,13 +49,12 @@ public class Storify implements Serializable {
         isUser = user;
     }
 
-    public void setAministrator(boolean aministrator) {
-        isAministrator = aministrator;
-    }
-
-
     public void setUser(Persona user) {
         this.user = user;
+    }
+
+    public Persona getUser() {
+        return user;
     }
 
 //    public void setAdministrator(Administrator administrator) {

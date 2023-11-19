@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="idProducto" prefHeight="176.0" prefWidth="584.0" style="-fx-border-color: black; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProductCardViewController">
+<HBox fx:id="idProducto" prefHeight="176.0" prefWidth="584.0" style="-fx-border-color: black; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DomiciliosCardViewController">
    <stylesheets>
       <URL value="@../css/styles.css" />
    </stylesheets>
@@ -33,15 +33,16 @@
             <VBox fx:id="contentImage" layoutX="265.0" layoutY="1.0" prefHeight="178.0" prefWidth="317.0" style="-fx-padding: 30px;">
                <children>
                   <AnchorPane prefHeight="13.0" prefWidth="257.0" />
-                  <Text fx:id="nombreProducto" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" textAlignment="RIGHT" wrappingWidth="233.0">
+                  <Text fx:id="coddomicilio" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="coddomicilio" textAlignment="RIGHT" wrappingWidth="233.0">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
                   <AnchorPane prefHeight="20.0" prefWidth="257.0" />
-                  <Text fx:id="descripcion" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" textAlignment="RIGHT" wrappingWidth="237.0" />
-                  <Text fx:id="precio" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio" textAlignment="RIGHT" wrappingWidth="241.0" />
-                  <Text fx:id="codProducto" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="CodProducto" textAlignment="RIGHT" wrappingWidth="244.0" />
+                  <Text fx:id="horaenvio" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="horaenvio" textAlignment="RIGHT" wrappingWidth="237.0" />
+                  <Text fx:id="direccion" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="direccion" textAlignment="RIGHT" wrappingWidth="241.0" />
+                  <Text fx:id="fechafacturacion" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="fechafacturacion" textAlignment="RIGHT" wrappingWidth="237.0" />
+                  <Text fx:id="total" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="total" textAlignment="RIGHT" wrappingWidth="237.0" />
                </children>
             </VBox>
          </children>

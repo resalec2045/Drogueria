@@ -3,16 +3,14 @@ package Models.Reportes;
 public class InventarioProducto {
 
     int codinventario;
-    int cantidadstock;
     String nombreproducto;
     String fecha;
     String responsable;
     String nombre;
     int cantidad;
 
-    public InventarioProducto(int codinventario, int cantidadstock, String nombreproducto, String fecha, String responsable, String nombre, int cantidad) {
+    public InventarioProducto(int codinventario, String nombreproducto, String fecha, String responsable, String nombre, int cantidad) {
         this.codinventario = codinventario;
-        this.cantidadstock = cantidadstock;
         this.nombreproducto = nombreproducto;
         this.fecha = fecha;
         this.responsable = responsable;
@@ -26,14 +24,6 @@ public class InventarioProducto {
 
     public void setCodinventario(int codinventario) {
         this.codinventario = codinventario;
-    }
-
-    public int getCantidadstock() {
-        return cantidadstock;
-    }
-
-    public void setCantidadstock(int cantidadstock) {
-        this.cantidadstock = cantidadstock;
     }
 
     public String getNombreproducto() {
@@ -80,7 +70,6 @@ public class InventarioProducto {
     public String toString() {
         return "InventarioProducto{" +
                 "codinventario=" + codinventario +
-                ", cantidadstock=" + cantidadstock +
                 ", nombreproducto='" + nombreproducto + '\'' +
                 ", fecha='" + fecha + '\'' +
                 ", responsable='" + responsable + '\'' +

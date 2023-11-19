@@ -1,8 +1,12 @@
 package Controller;
 import Exceptions.StorifyExceptions;
 import Models.Producto.Producto;
+import Models.Reportes.Domicilio;
+import Models.Reportes.Factura;
 import Utils.ModelFactoryController;
 import Utils.NavBar;
+import daoController.DomicilioController;
+import daoController.FacturaController;
 import daoController.ProductoController;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
@@ -27,42 +31,115 @@ public class HomePageController {
     @FXML
     private Button btnArtists;
     @FXML
-    private Button btnFavorites;
+    private Button btnDomicilio;
+    @FXML
+    private Button btnInformes;
     @FXML
     public VBox containerCards;
 
     ProductoController productoController = new ProductoController();
+    FacturaController facturaController = new FacturaController();
+    DomicilioController domicilioController = new DomicilioController();
 
     List<Producto> productos = productoController.listarProductos();
+    List<Factura> facturas = facturaController.listarFacturas();
+    List<Domicilio> domicilios = domicilioController.listarDomicilios();
 
     String pressedStyle = "-fx-border-color: purple;  -fx-border-width: 2px;  -fx-border-radius: 2px;";
-
     ObservableList<FXMLLoader> arrayListProducts = FXCollections.observableArrayList();
+    ObservableList<FXMLLoader> arrayFacturas = FXCollections.observableArrayList();
+    ObservableList<FXMLLoader> arrayDomicilio = FXCollections.observableArrayList();
 
-//    BinarySearchTree binarySearchTree = new BinarySearchTree();
-//
-//    SongsUserList songsUserList = new SongsUserList();
-//
-//    SongsArtistList songsArtistList = new SongsArtistList();
-//
-//    BinaryNode binaryNode;
 
     @FXML
     void initialize() throws IOException, StorifyExceptions {
-//
+
         modelFactoryController = ModelFactoryController.getInstance();
 
         productos = productoController.listarProductos();
-
-//        for (int i = 0; i < modelFactoryController.getStorify().getArtists().size(); i++) {
-//            binaryNode = new BinaryNode(modelFactoryController.getStorify().getArtists().get(i));
-//            binarySearchTree.arrayToBinaryTree(binaryNode, modelFactoryController.getStorify().getArtists());
-//        }
 
         btnAllSongs.setStyle(pressedStyle);
         modelFactoryController.sectionCurrent = "Canciones";
 
         addCardsToView();
+    }
+
+    @FXML
+    private void handleClickBuscador() throws Exception {
+
+        productos = productoController.BuscarProductoPorNombre(searchField.getText());
+
+        for (Producto p : productos) {
+            System.out.println(p.getNombre());
+        }
+
+    }
+    @FXML
+    void showDomicilio() {
+        modelFactoryController.sectionCurrent = "Artistas";
+        modelFactoryController.isArtist = new SimpleBooleanProperty(true);
+        containerCards.getChildren().removeAll(containerCards.getChildren());
+
+        for (int i = 0; i < facturas.size(); i++) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("DomiciliosCard-view.fxml"));
+            arrayDomicilio.add(i, loader);
+            modelFactoryController.setCurrentDomilicio(domicilios.get(i));
+            try {
+                containerCards.getChildren().add(arrayDomicilio.get(i).load());
+            } catch (IOException e) {
+            }
+        }
+
+        btnAllSongs.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+        btnArtists.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+        btnDomicilio.setStyle(pressedStyle);
+    }
+
+    @FXML
+    public void showFactura() {
+
+        modelFactoryController.sectionCurrent = "Artistas";
+        modelFactoryController.isArtist = new SimpleBooleanProperty(true);
+        containerCards.getChildren().removeAll(containerCards.getChildren());
+
+        for (int i = 0; i < facturas.size(); i++) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FacturaCard-view.fxml"));
+            arrayFacturas.add(i, loader);
+            modelFactoryController.setCurrentFacturas(facturas.get(i));
+            try {
+                containerCards.getChildren().add(arrayFacturas.get(i).load());
+            } catch (IOException e) {
+            }
+        }
+
+        btnAllSongs.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+        btnDomicilio.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+        btnArtists.setStyle(pressedStyle);
+
+    }
+
+    @FXML
+    void showProducts() throws StorifyExceptions, IOException {
+
+        modelFactoryController.isArtist = new SimpleBooleanProperty(false);
+        modelFactoryController.sectionCurrent = "Canciones";
+        containerCards.getChildren().removeAll(containerCards.getChildren());
+        if (containerCards.getChildren().size() != 0) {
+            arrayListProducts.removeAll();
+            addCardsToView();
+        } else {
+            addCardsToView();
+        }
+
+        btnArtists.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+        btnDomicilio.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+        btnAllSongs.setStyle(pressedStyle);
+
+    }
+
+    @FXML
+    public void showInformes() {
+
     }
 
     public void addCardsToView() throws IOException, StorifyExceptions {
@@ -75,7 +152,7 @@ public class HomePageController {
         for (int i = 0; i < productos.size(); i++) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductCard-view.fxml"));
             arrayListProducts.add(i, loader);
-            modelFactoryController.setCurrentSong(productos.get(i));
+            modelFactoryController.setCurrentProduct(productos.get(i));
             try {
                 containerCards.getChildren().add(arrayListProducts.get(i).load());
             } catch (IOException e) {
@@ -86,34 +163,13 @@ public class HomePageController {
     }
 
     @FXML
-    private void handleClickBuscador() throws Exception {
-
-        productos = productoController.BuscarProductoPorNombre(searchField.getText());
-//
-//        modelFactoryController.isArtist.setValue(true);
-//        boolean search = false;
-//
-//        for (int i = 0; i < modelFactoryController.getStorify().getArtists().size() && !search; i++) {
-////            binaryNode = new BinaryNode(modelFactoryController.getStorify().getArtists().get(i));
-////
-////            search = binarySearchTree.searchBinary(binaryNode,searchField.getText());
-//
-//            if (search) {
-//                showSongsOfArtist(searchField.getText());
-//            }
-//        }
-//
-//        if (!search) {
-//            containerCards.getChildren().removeAll(containerCards.getChildren());
-//            arrayListSongs.removeAll();
-//            Label label = new Label("No se han encontrado artistas que coincidan con el nombre ingresado en la búsqueda.");
-//            label.setPrefWidth(containerCards.getPrefWidth());
-//            label.setPrefHeight(50);
-//            containerCards.getChildren().add(label);
-//        }
+    public void navToLogin() {
+        NavBar navBar = new NavBar();
+        navBar.navigateToLogin();
     }
 
-    private void showSongsOfArtist(String search) {
+
+//    private void showSongsOfArtist(String search) {
 //        modelFactoryController.isArtist = new SimpleBooleanProperty(false);
 //        containerCards.getChildren().removeAll(containerCards.getChildren());
 //        arrayListSongs.removeAll();
@@ -134,25 +190,9 @@ public class HomePageController {
 //                    }
 //        }
 //        }
-    }
+//    }
 
-    @FXML
-    void showFavorites() throws StorifyExceptions, IOException {
-//        modelFactoryController.isArtist = new SimpleBooleanProperty(false);
-//        modelFactoryController.sectionCurrent = "Favoritos";
-//        containerCards.getChildren().removeAll(containerCards.getChildren());
-//        if (containerCards.getChildren().size() != 0) {
-//            arrayListSongs.removeAll();
-//            showFavoritesSong();
-//        } else {
-//            showFavoritesSong();
-//        }
-//        btnArtists.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
-//        btnAllSongs.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
-//        btnFavorites.setStyle(pressedStyle);
-    }
-
-    private void showFavoritesSong() {
+//    private void showFavoritesSong() {
 //        modelFactoryController.isArtist = new SimpleBooleanProperty(false);
 //        for (int i = 0; i < modelFactoryController.getFavoriteSongs().size(); i++) {
 //            FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductCard-view.fxml"));
@@ -163,53 +203,7 @@ public class HomePageController {
 //            } catch (IOException e) {
 //            }
 //        }
-    }
+//    }
 
-    @FXML
-    public void showArtists() {
 
-//        modelFactoryController.sectionCurrent = "Artistas";
-//        modelFactoryController.isArtist = new SimpleBooleanProperty(true);
-//        containerCards.getChildren().removeAll(containerCards.getChildren());
-//        arrayListSongs.removeAll();
-//        for (int i = 0; i < modelFactoryController.getStorify().getArtists().size(); i++) {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("ArtisCard-view.fxml"));
-//            arrayListSongs.add(i, loader);
-//            modelFactoryController.setCurrentArtist(modelFactoryController.getStorify().getArtists().get(i));
-//            try {
-//                containerCards.getChildren().add(arrayListSongs.get(i).load());
-//            } catch (IOException e) {
-//            }
-//        }
-//
-//        btnAllSongs.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
-//        btnFavorites.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
-//        btnArtists.setStyle(pressedStyle);
-
-    }
-
-    @FXML
-    void showSongs() throws StorifyExceptions, IOException {
-
-        modelFactoryController.isArtist = new SimpleBooleanProperty(false);
-        modelFactoryController.sectionCurrent = "Canciones";
-        containerCards.getChildren().removeAll(containerCards.getChildren());
-        if (containerCards.getChildren().size() != 0) {
-            arrayListProducts.removeAll();
-            addCardsToView();
-        } else {
-            addCardsToView();
-        }
-
-        btnArtists.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
-        btnFavorites.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
-        btnAllSongs.setStyle(pressedStyle);
-
-    }
-
-    @FXML
-    public void navToLogin() {
-        NavBar navBar = new NavBar();
-        navBar.navigateToLogin();
-    }
 }
