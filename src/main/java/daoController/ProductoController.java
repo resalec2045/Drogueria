@@ -21,4 +21,8 @@ public class ProductoController {
         return this.productoDao.listarProductos();
     }
 
+    public List<Producto> BuscarProductoPorNombre(String nombre) {
+        return this.productoDao.BuscarProductoPorNombre(nombre);
+    }
+
 }

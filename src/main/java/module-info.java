@@ -28,4 +28,6 @@ module com.example.drogueria {
     opens Models.Song.ArtistSongs to javafx.fxml;
     exports Models.Song.UserSongs;
     opens Models.Song.UserSongs to javafx.fxml;
+    exports Models.Reportes;
+    opens Models.Reportes to javafx.fxml;
 }

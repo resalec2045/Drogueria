@@ -92,13 +92,16 @@ public class HomePageController {
 
     @FXML
     private void handleClickBuscador() throws Exception {
+
+        productos = productoController.BuscarProductoPorNombre(searchField.getText());
+//
 //        modelFactoryController.isArtist.setValue(true);
 //        boolean search = false;
 //
 //        for (int i = 0; i < modelFactoryController.getStorify().getArtists().size() && !search; i++) {
-//            binaryNode = new BinaryNode(modelFactoryController.getStorify().getArtists().get(i));
-//
-//            search = binarySearchTree.searchBinary(binaryNode,searchField.getText());
+////            binaryNode = new BinaryNode(modelFactoryController.getStorify().getArtists().get(i));
+////
+////            search = binarySearchTree.searchBinary(binaryNode,searchField.getText());
 //
 //            if (search) {
 //                showSongsOfArtist(searchField.getText());
