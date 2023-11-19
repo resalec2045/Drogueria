@@ -1,10 +1,6 @@
 package Controller;
 import Exceptions.StorifyExceptions;
-import Models.Artist.BinaryNode;
-import Models.Artist.BinarySearchTree;
-import Models.Products.Producto;
-import Models.Song.ArtistSongs.SongsArtistList;
-import Models.Song.UserSongs.SongsUserList;
+import Models.Producto.Producto;
 import Utils.ModelFactoryController;
 import Utils.NavBar;
 import daoController.ProductoController;
@@ -14,7 +10,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
@@ -172,6 +167,7 @@ public class HomePageController {
 
     @FXML
     public void showArtists() {
+
 //        modelFactoryController.sectionCurrent = "Artistas";
 //        modelFactoryController.isArtist = new SimpleBooleanProperty(true);
 //        containerCards.getChildren().removeAll(containerCards.getChildren());

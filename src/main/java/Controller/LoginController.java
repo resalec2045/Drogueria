@@ -4,13 +4,11 @@ import Exceptions.SongsExceptions;
 import Exceptions.StorifyExceptions;
 import Exceptions.UserExceptions;
 import Models.*;
-import Models.Person.Administrator;
-import Models.Person.User;
 import Models.Reportes.InformeCliente;
 import Utils.CustomAlert;
 import Utils.ModelFactoryController;
 import Utils.getStage;
-import daoController.InformeClienteController;
+import daoController.ClienteController;
 import daoController.PersonaController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,11 +21,10 @@ import java.util.List;
 
 public class LoginController {
     ModelFactoryController modelFactoryController;
-    Administrator administrator;
-    User user;
+//    User user;
     PersonaController personaController = new PersonaController();
 
-    InformeClienteController informeClienteController = new InformeClienteController();
+    ClienteController clienteController = new ClienteController();
 
     public LoginController(ModelFactoryController modelFactoryController) throws IOException, UserExceptions, SongsExceptions {
         this.modelFactoryController = modelFactoryController;
@@ -60,7 +57,7 @@ public class LoginController {
 
         Persona user = personaController.verificarLogin(userName, password);
 
-        List<InformeCliente> informeCliente = informeClienteController.listarInformesPorEstado("atendido");
+        List<InformeCliente> informeCliente = clienteController.listarInformesPorEstado("atendido");
 
         for ( int i = 0; i < informeCliente.size(); i++ ) {
             System.out.println(informeCliente.get(i).toString());

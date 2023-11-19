@@ -2,7 +2,7 @@ package Controller;
 
 import Exceptions.StorifyExceptions;
 
-import Models.Products.Producto;
+import Models.Producto.Producto;
 import Models.Storify;
 import Utils.ModelFactoryController;
 import javafx.fxml.FXML;
@@ -84,11 +84,11 @@ public class ProductCardViewController {
         descripcion.setText("Codigo: " + song.getDescripcion());
         precio.setText("Inventario: " + song.getInventario());
         inventario.setText("Precio: " + song.getPrecio() + "");
-        codProducto.setText("Precio: " + song.getCodproducto() + "");
-
-        if(modelFactoryController.sectionCurrent.equals("Favoritos")) {
-            btnFavoritos.setText("Eliminar");
-        }
+        codProducto.setText("Codigo del producto: " + song.getCodproducto() + "");
+//
+//        if(modelFactoryController.sectionCurrent.equals("Favoritos")) {
+//            btnFavoritos.setText("Eliminar");
+//        }
     }
 
     public void playSong() throws Exception {

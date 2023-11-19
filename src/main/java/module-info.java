@@ -16,18 +16,18 @@ module com.example.drogueria {
     exports Controller;
     exports Models;
     opens Models to javafx.fxml;
-    exports Models.Artist;
-    opens Models.Artist to javafx.fxml;
+//    exports Models.Artist;
+//    opens Models.Artist to javafx.fxml;
     exports Models.Person;
     opens Models.Person to javafx.fxml;
-    exports Models.Song;
-    opens Models.Song to javafx.fxml;
+//    exports Models.Song;
+//    opens Models.Song to javafx.fxml;
     exports Utils;
     opens Utils to javafx.fxml;
-    exports Models.Song.ArtistSongs;
-    opens Models.Song.ArtistSongs to javafx.fxml;
-    exports Models.Song.UserSongs;
-    opens Models.Song.UserSongs to javafx.fxml;
+//    exports Models.Song.ArtistSongs;
+//    opens Models.Song.ArtistSongs to javafx.fxml;
+//    exports Models.Song.UserSongs;
+//    opens Models.Song.UserSongs to javafx.fxml;
     exports Models.Reportes;
     opens Models.Reportes to javafx.fxml;
 }

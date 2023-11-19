@@ -40,7 +40,7 @@ public class ArtistCardViewController {
     @FXML
     void initialize() throws IOException, StorifyExceptions {
         modelFactoryController = ModelFactoryController.getInstance();
-        idArtist.setId(modelFactoryController.getCurrentArtist().getId());
+//        idArtist.setId(modelFactoryController.getCurrentArtist().getId());
         if (modelFactoryController.isArtist.getValue()) {
             setArtist();
         } else {

@@ -1,6 +1,5 @@
 package Controller;
 import Exceptions.UserExceptions;
-import Models.Artist.Artist;
 import Models.Storify;
 import Utils.CustomAlert;
 import Utils.ModelFactoryController;

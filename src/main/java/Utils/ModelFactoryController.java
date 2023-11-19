@@ -1,24 +1,23 @@
 package Utils;
 
-import Models.Artist.Artist;
+//import Models.Artist.Artist;
 //import Models.Song.Producto;
-import Models.Products.Producto;
+import Models.Producto.Producto;
 import Models.Storify;
-import Services.IModelFactoryService;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class ModelFactoryController implements IModelFactoryService {
+public class ModelFactoryController {
     private Storify storify;
 
     private Producto currentSong;
 
-    private Artist currentArtist;
+//    private Artist currentArtist;
 
     private ObservableList<Producto> favoriteSongs = FXCollections.observableArrayList();
 
-    ObservableList<Artist> arrayListArtist = FXCollections.observableArrayList();
+//    ObservableList<Artist> arrayListArtist = FXCollections.observableArrayList();
 
     public SimpleBooleanProperty isArtist = new SimpleBooleanProperty(false);
 
@@ -56,12 +55,12 @@ public class ModelFactoryController implements IModelFactoryService {
         this.favoriteSongs = favoriteSongs;
     }
 
-    public Artist getCurrentArtist() {
-        return currentArtist;
-    }
-
-    public void setCurrentArtist(Artist currentArtist) {
-        this.currentArtist = currentArtist;
-    }
+//    public Artist getCurrentArtist() {
+//        return currentArtist;
+//    }
+//
+//    public void setCurrentArtist(Artist currentArtist) {
+//        this.currentArtist = currentArtist;
+//    }
 
 }

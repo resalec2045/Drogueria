@@ -1,8 +1,8 @@
 package daoController;
 
-import Models.Person.Persona;
-import Models.Products.Producto;
-import dao.PersonaDao;
+import Models.Producto.Producto;
+import Models.Reportes.CantidadProductoStock;
+import Models.Reportes.InventarioProducto;
 import dao.ProductoDao;
 import factory.ConnectionFactory;
 
@@ -23,6 +23,14 @@ public class ProductoController {
 
     public List<Producto> BuscarProductoPorNombre(String nombre) {
         return this.productoDao.BuscarProductoPorNombre(nombre);
+    }
+
+    public List<InventarioProducto> listarInventarioPorProducto() {
+        return this.productoDao.listarInventario();
+    }
+
+    public List<CantidadProductoStock> listarEmpleadoSalario() {
+        return this.productoDao.listarCantidadProductoStock();
     }
 
 }
