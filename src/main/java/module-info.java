@@ -11,6 +11,8 @@ module com.example.drogueria {
 //    requires com.almasb.fxgl.all;
     requires java.desktop;
     requires java.sql;
+    requires org.jfree.jfreechart;
+    requires itextpdf;
 
     opens Controller to javafx.fxml;
     exports Controller;

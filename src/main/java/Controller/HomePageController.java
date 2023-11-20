@@ -3,6 +3,7 @@ import Models.Producto.Producto;
 import Models.Reportes.*;
 import Utils.ModelFactoryController;
 import Utils.NavBar;
+import Utils.PdfGenerator;
 import Utils.TiposInformes;
 import daoController.*;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -181,6 +182,7 @@ public class HomePageController {
                 break;
             case "listarEmpleadoSalario":
                 List<Object> l3 = Collections.singletonList(empleadoController.listarEmpleadoSalario());
+                PdfGenerator.generarPdf((List<Object>) l3.get(0), "listarEmpleadoSalario", "Empleado", "Salario");
                 addlistarInformes(l3);
                 break;
             case "listarInformesVentas":
@@ -194,10 +196,12 @@ public class HomePageController {
                 break;
             case "listarCantidadProductoStock":
                 List<Object> l6 = Collections.singletonList(productoController.listarCantidadProductoStock());
+                PdfGenerator.generarPdf((List<Object>) l6.get(0), "listarCantidadProductoStock", "Productos", "Stock");
                 addlistarInformes(l6);
                 break;
             case "listarVentasPorMes":
                 List<Object> l7 = Collections.singletonList(ventasController.listarVentasPorMes());
+                PdfGenerator.generarPdf((List<Object>) l7.get(0), "listarVentasPorMes", "Mes", "Ventas");
                 addlistarInformes(l7);
                 break;
             case "ELEMENTO_8":
