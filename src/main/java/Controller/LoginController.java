@@ -1,8 +1,5 @@
 package Controller;
 
-import Exceptions.SongsExceptions;
-import Exceptions.StorifyExceptions;
-import Exceptions.UserExceptions;
 import Models.*;
 import Models.Reportes.InformeCliente;
 import Utils.CustomAlert;
@@ -26,7 +23,7 @@ public class LoginController {
 
     ClienteController clienteController = new ClienteController();
 
-    public LoginController(ModelFactoryController modelFactoryController) throws IOException, UserExceptions, SongsExceptions {
+    public LoginController(ModelFactoryController modelFactoryController) throws IOException {
         this.modelFactoryController = modelFactoryController;
         modelFactoryController.setStorify(new Storify());
 //        modelFactoryController.getStorify().setUsers(Persistence.loadUsers());
@@ -53,7 +50,7 @@ public class LoginController {
 //        Persistence.saveAdministrator(modelFactoryController.getStorify().getAdministrators());
 //    }
 
-    public void login(String userName, String password) throws StorifyExceptions, IOException {
+    public void login(String userName, String password) {
 
         Persona user = personaController.verificarLogin(userName, password);
 

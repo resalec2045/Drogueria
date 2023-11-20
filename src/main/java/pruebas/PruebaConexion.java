@@ -25,27 +25,27 @@ public class PruebaConexion {
         DomicilioController domicilioController = new DomicilioController();
 
         List<InformeCliente> l1 = clienteController.listarInformesPorEstado("pendiente");
-        List<ComentarioClienteEstado> l2 = clienteController.listarComentarios();
-
-        List<InformeTrabajoEmpleados> l3 = empleadoController.listarInformesTrabajoPorHorasEmpleados();
-        List<EmpleadoSalario> l4 = empleadoController.listarEmpleadoSalario();
-
-        List<Persona> l5 = personaController.listarPersonas();
-
-        List<Producto> l6 = productoController.listarProductos();
-        List<CantidadProductoStock> l7 = productoController.listarCantidadProductoStock();
-        List<Producto> l8 = productoController.BuscarProductoPorNombre("Paracetamol");
+//        List<ComentarioClienteEstado> l2 = clienteController.listarComentarios();
+//
+//        List<InformeTrabajoEmpleados> l3 = empleadoController.listarInformesTrabajoPorHorasEmpleados();
+//        List<EmpleadoSalario> l4 = empleadoController.listarEmpleadoSalario();
+//
+//        List<Persona> l5 = personaController.listarPersonas();
+//
+//        List<Producto> l6 = productoController.listarProductos();
+//        List<CantidadProductoStock> l7 = productoController.listarCantidadProductoStock();
+//        List<Producto> l8 = productoController.BuscarProductoPorNombre("Paracetamol");
 
 //        TODO: REVISAR EL LISTARINVENTARIOPORPRODUCTO
-        List<InventarioProducto> l9 = productoController.listarInventarioPorProducto();
-        List<CantidadProductoStock> l12 = productoController.listarCantidadProductoStock();
+//        List<InventarioProducto> l9 = productoController.listarInventarioPorProducto();
+//        List<CantidadProductoStock> l12 = productoController.listarCantidadProductoStock();
+//
+//        List<VentasMes> l10 = ventasController.listarVentasPorMes();
+//        List<Venta> l11 = ventasController.listarInformesVentas();
+//
+//        List<Domicilio> l13 = domicilioController.listarDomicilios();
 
-        List<VentasMes> l10 = ventasController.listarVentasPorMes();
-        List<Venta> l11 = ventasController.listarInformesVentas();
-
-        List<Domicilio> l13 = domicilioController.listarDomicilios();
-
-        for ( Domicilio i : l13 ) {
+        for ( InformeCliente i : l1 ) {
             System.out.println(i);
         }
 

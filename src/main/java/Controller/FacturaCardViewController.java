@@ -1,6 +1,5 @@
 package Controller;
 
-import Exceptions.StorifyExceptions;
 import Models.Reportes.Factura;
 import Models.Reportes.Venta;
 import Models.Storify;
@@ -48,7 +47,7 @@ public class FacturaCardViewController {
     Storify storify = ModelFactoryController.getInstance().getStorify();
 
     @FXML
-    void initialize() throws IOException, StorifyExceptions {
+    void initialize() {
         modelFactoryController = ModelFactoryController.getInstance();
         idProducto.setId(""+modelFactoryController.getCurrentFacturas());
 //        if (modelFactoryController.isArtist.getValue()) {

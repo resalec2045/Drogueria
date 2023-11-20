@@ -12,15 +12,12 @@ import javafx.collections.ObservableList;
 
 public class ModelFactoryController {
     private Storify storify;
-
     private Producto currentProduct;
-
     private Factura currentFacturas;
     private Domicilio currentDomilicio;
+    private Object currentInforme;
 
     private ObservableList<Producto> favoriteSongs = FXCollections.observableArrayList();
-
-
     public SimpleBooleanProperty isArtist = new SimpleBooleanProperty(false);
 
     public String sectionCurrent = "Canciones";
@@ -48,6 +45,13 @@ public class ModelFactoryController {
         this.currentProduct = currentProduct;
     }
 
+    public Object getCurrentInforme() {
+        return currentInforme;
+    }
+
+    public void setCurrentInforme(Object currentInforme) {
+        this.currentInforme = currentInforme;
+    }
 
     public ObservableList<Producto> getFavoriteSongs() {
         return favoriteSongs;

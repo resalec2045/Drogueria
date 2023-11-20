@@ -1,8 +1,4 @@
 package Controller;
-
-import Exceptions.SongsExceptions;
-import Exceptions.StorifyExceptions;
-import Exceptions.UserExceptions;
 import Utils.ModelFactoryController;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -20,12 +16,12 @@ public class LoginViewController {
     private TextField fieldPassword;
 
     @FXML
-    void initialize() throws IOException, UserExceptions, SongsExceptions {
+    void initialize() throws IOException {
         modelFactoryController = ModelFactoryController.getInstance();
         loginViewController = new LoginController(modelFactoryController);
     }
     @FXML
-    protected void login() throws IOException, StorifyExceptions {
+    protected void login() throws IOException {
         loginViewController.login(fieldUserName.getText(), fieldPassword.getText());
     }
 }
