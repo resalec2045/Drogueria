@@ -1,6 +1,7 @@
 package daoController;
 
 import Models.Reportes.ComentarioClienteEstado;
+import Models.Reportes.EmpleadoHorario;
 import Models.Reportes.EmpleadoSalario;
 import Models.Reportes.InformeTrabajoEmpleados;
 import dao.EmpleadoDao;
@@ -23,5 +24,8 @@ public class EmpleadoController {
 
     public List<EmpleadoSalario> listarEmpleadoSalario() {
         return this.empleadoDao.listarEmpleadoSalario();
+    }
+    public List<EmpleadoHorario> ListarEmleadoConMasHoras() {
+        return this.empleadoDao.ListarEmleadoConMasHoras();
     }
 }

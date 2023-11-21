@@ -8,9 +8,10 @@ public enum TiposInformes {
     listarInventarioPorProducto("listarInventarioPorProducto"),
     listarCantidadProductoStock("listarCantidadProductoStock"),
     listarVentasPorMes("listarVentasPorMes"),
-    ELEMENTO_8("Elemento 8"),
-    ELEMENTO_9("Elemento 9"),
-    ELEMENTO_10("Elemento 10");
+    ListarClienteConMasComprasPrimerSemestre("ListarClienteConMasComprasPrimerSemestre"),
+    //    TODO: FALTAN
+    ListarProveedoresCategoriaMasVendida("ListarProveedoresCategoriaMasVendida"),
+    ListarEmleadoConMasHoras("ListarEmleadoConMasHoras");
 
     private final String nombre;
 

@@ -1,5 +1,6 @@
 package dao;
 
+import Models.Reportes.ClienteCompra;
 import Models.Reportes.ComentarioClienteEstado;
 import Models.Reportes.InformeCliente;
 
@@ -86,6 +87,44 @@ public class ClienteDao {
                                 resultSet.getInt("id_cliente"),
                                 resultSet.getString("nombre_cliente"
                                 )
+                        ));
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return resultado;
+    }
+
+    public List<ClienteCompra> ListarClienteConMasComprasPrimerSemestre () {
+
+        List<ClienteCompra> resultado = new ArrayList<>();
+
+        try {
+            String sql = "SELECT\n" +
+                    "    c.persona_idpersona, p.nombre, COUNT(*) AS total_compras \n" +
+                    "FROM\n" +
+                    "    cliente c\n" +
+                    "    INNER JOIN factura f ON c.persona_idpersona = f.cliente_persona_idpersona\n" +
+                    "    INNER JOIN persona p ON c.persona_idpersona = p.idpersona\n" +
+                    " WHERE YEAR(f.fechafacturacion) = YEAR(CURRENT_DATE) AND MONTH(f.fechafacturacion) BETWEEN 1 AND 6\n" +
+                    " GROUP BY c.persona_idpersona, p.nombre\n" +
+                    "    ORDER BY total_compras DESC LIMIT 1";
+
+            final PreparedStatement statement = con
+                    .prepareStatement(sql);
+
+            try (statement) {
+                final ResultSet resultSet = statement.executeQuery();
+
+                try (resultSet) {
+                    while (resultSet.next()) {
+                        resultado.add( new ClienteCompra(
+                                resultSet.getString("persona_idpersona"),
+                                resultSet.getString("nombre"),
+                                resultSet.getString("total_compras")
                         ));
                     }
                 }

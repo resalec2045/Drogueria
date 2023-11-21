@@ -1,8 +1,6 @@
 package pruebas;
 
 
-import Models.Person.Persona;
-import Models.Producto.Producto;
 import Models.Reportes.*;
 import daoController.*;
 import factory.ConnectionFactory;
@@ -23,8 +21,9 @@ public class PruebaConexion {
         ProductoController productoController = new ProductoController();
         VentasController ventasController = new VentasController();
         DomicilioController domicilioController = new DomicilioController();
+        ProveedorController proveedorController = new ProveedorController();
 
-        List<InformeCliente> l1 = clienteController.listarInformesPorEstado("pendiente");
+//        List<InformeCliente> l1 = clienteController.listarInformesPorEstado("pendiente");
 //        List<ComentarioClienteEstado> l2 = clienteController.listarComentarios();
 //
 //        List<InformeTrabajoEmpleados> l3 = empleadoController.listarInformesTrabajoPorHorasEmpleados();
@@ -45,7 +44,11 @@ public class PruebaConexion {
 //
 //        List<Domicilio> l13 = domicilioController.listarDomicilios();
 
-        for ( InformeCliente i : l1 ) {
+//        List<ClienteCompra> l14 = clienteController.ListarClienteConMasComprasPrimerSemestre();
+
+        List<ProveedorCompania> l14 = proveedorController.ListarProveedoresCategoriaMasVendida();
+
+        for ( ProveedorCompania i : l14 ) {
             System.out.println(i);
         }
 

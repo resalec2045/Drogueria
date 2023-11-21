@@ -33,16 +33,8 @@ public class FacturaCardViewController {
     @FXML
     private Text precio;
 
-
-    @FXML
-    private Text codProducto;
-
-
     @FXML
     private HBox idProducto;
-
-    @FXML
-    private Button btnFavoritos;
 
     Storify storify = ModelFactoryController.getInstance().getStorify();
 
@@ -50,11 +42,6 @@ public class FacturaCardViewController {
     void initialize() {
         modelFactoryController = ModelFactoryController.getInstance();
         idProducto.setId(""+modelFactoryController.getCurrentFacturas());
-//        if (modelFactoryController.isArtist.getValue()) {
-//            setArtist();
-//        } else {
-//            setSong();
-//        }
         setFactura();
     }
 

@@ -46,6 +46,8 @@ public class HomePageController {
     EmpleadoController empleadoController = new EmpleadoController();
     PersonaController personaController = new PersonaController();
     VentasController ventasController = new VentasController();
+    ProveedorController proveedorController = new ProveedorController();
+
 
 
     List<Producto> productos = productoController.listarProductos();
@@ -204,14 +206,18 @@ public class HomePageController {
                 PdfGenerator.generarPdf((List<Object>) l7.get(0), "listarVentasPorMes", "Mes", "Ventas");
                 addlistarInformes(l7);
                 break;
-            case "ELEMENTO_8":
-                System.out.println("ELEMENTO_8");
+            case "ListarClienteConMasComprasPrimerSemestre":
+                List<Object> l8 = Collections.singletonList(clienteController.ListarClienteConMasComprasPrimerSemestre());
+                addlistarInformes(l8);
                 break;
-            case "ELEMENTO_9":
-                System.out.println("ELEMENTO_9");
+            //   TODO: FALTAN
+            case "ListarProveedoresCategoriaMasVendida":
+                List<Object> l9 = Collections.singletonList(proveedorController.ListarProveedoresCategoriaMasVendida());
+                addlistarInformes(l9);
                 break;
-            case "ELEMENTO_10":
-                System.out.println("ELEMENTO_10");
+            case "ListarEmleadoConMasHoras":
+                List<Object> l10 = Collections.singletonList(empleadoController.ListarEmleadoConMasHoras());
+                addlistarInformes(l10);
                 break;
             default:
                 System.out.println("No se ha seleccionado un informe");

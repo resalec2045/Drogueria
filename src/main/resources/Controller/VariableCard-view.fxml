@@ -39,7 +39,7 @@
                      </font>
                   </Text>
                   <AnchorPane prefHeight="20.0" prefWidth="257.0" />
-                  <Text fx:id="var2" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="var2" textAlignment="RIGHT" wrappingWidth="237.0" />
+                  <Text fx:id="var2" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="237.0" />
                   <Text fx:id="var3" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="241.0" />
                   <Text fx:id="var4" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="244.0" />
                   <Text fx:id="var5" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="244.0" />

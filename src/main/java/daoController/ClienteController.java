@@ -1,5 +1,6 @@
 package daoController;
 
+import Models.Reportes.ClienteCompra;
 import Models.Reportes.ComentarioClienteEstado;
 import Models.Reportes.InformeCliente;
 import dao.ClienteDao;
@@ -22,6 +23,10 @@ public class ClienteController {
 
     public List<ComentarioClienteEstado> listarComentarios() {
         return this.clienteDao.listarComentarios();
+    }
+
+    public List<ClienteCompra> ListarClienteConMasComprasPrimerSemestre() {
+        return this.clienteDao.ListarClienteConMasComprasPrimerSemestre();
     }
 
 }

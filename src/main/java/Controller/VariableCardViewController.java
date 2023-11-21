@@ -80,8 +80,16 @@ public class VariableCardViewController {
         } else if (informe instanceof VentasMes) {
             var1.setText( "Mes: " + ((VentasMes) informe).getMes());
             var2.setText( "Total Ventas: " + ((VentasMes) informe).getTotalVentas());
+        } else if (informe instanceof ClienteCompra) {
+            var1.setText( "ID Persona: " + ((ClienteCompra) informe).getPersona_idpersona());
+            var2.setText( "Nombre: " + ((ClienteCompra) informe).getNombre());
+            var3.setText( "Total Compras: " + ((ClienteCompra) informe).getTotal_compras());
+        } else if (informe instanceof  ProveedorCompania) {
+            var1.setText( "Nombre Compania: " + ((ProveedorCompania) informe).getNombreCompania());
+        } else if (informe instanceof  EmpleadoHorario) {
+            var1.setText( "Nombre: " + ((EmpleadoHorario) informe).getNombre());
+            var2.setText( "Tipo horario: " + ((EmpleadoHorario) informe).getTipohorario());
         }
-
     }
 
 }
