@@ -236,7 +236,6 @@ public class HomePageController {
                 addlistarInformes(l4);
                 break;
             case "listarInventarioPorProducto":
-                //        TODO: REVISAR EL LISTARINVENTARIOPORPRODUCTO
                 List<Object> l5 = Collections.singletonList(productoController.listarInventarioPorProducto());
                 addlistarInformes(l5);
                 break;
@@ -254,7 +253,6 @@ public class HomePageController {
                 List<Object> l8 = Collections.singletonList(clienteController.ListarClienteConMasComprasPrimerSemestre());
                 addlistarInformes(l8);
                 break;
-            //   TODO: FALTAN
             case "ListarProveedoresCategoriaMasVendida":
                 List<Object> l9 = Collections.singletonList(proveedorController.ListarProveedoresCategoriaMasVendida());
                 addlistarInformes(l9);

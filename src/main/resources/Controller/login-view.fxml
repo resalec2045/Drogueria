@@ -28,15 +28,7 @@
                         <Insets top="100.0" />
                     </VBox.margin>
                 </ImageView>
-                <Label prefHeight="39.0" prefWidth="300.0" text="TIENDA DE MÚSICA">
-                    <font>
-                        <Font name="Berlin Sans FB" size="27.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                    </VBox.margin>
-                </Label>
-                <Label prefHeight="35.0" prefWidth="87.0" text="Storify!">
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="300.0" text="DROGUERIA">
                     <font>
                         <Font name="Berlin Sans FB" size="27.0" />
                     </font>
