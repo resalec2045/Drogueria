@@ -21,7 +21,6 @@ public class VariableCardViewController {
     private VBox contentImage;
     @FXML
     private HBox idProducto;
-
     @FXML
     private Text var1;
     @FXML
@@ -35,8 +34,6 @@ public class VariableCardViewController {
     @FXML
     private Text var6;
 
-    Storify storify = ModelFactoryController.getInstance().getStorify();
-
     @FXML
     void initialize() {
         modelFactoryController = ModelFactoryController.getInstance();
@@ -48,7 +45,6 @@ public class VariableCardViewController {
         Object informe = modelFactoryController.getCurrentInforme();
 
         if (informe instanceof InformeCliente) {
-            System.out.println(informe);
             var1.setText( "Descripcion: " + ((InformeCliente) informe).getDescripcion());
             var2.setText( "Estado: " + ((InformeCliente) informe).getEstado());
             var3.setText( "Fecha De Registro: " + ((InformeCliente) informe).getFecharegistro());

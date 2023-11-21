@@ -20,7 +20,6 @@ public class DomicilioDao {
         modelFactoryController = ModelFactoryController.getInstance();
     }
 
-
     public List<Domicilio> listarDomicilios() {
         List<Domicilio> resultado = new ArrayList<>();
 
@@ -57,7 +56,5 @@ public class DomicilioDao {
 
         return resultado;
     }
-
-
-
+    
 }

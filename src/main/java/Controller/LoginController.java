@@ -17,48 +17,20 @@ import java.util.List;
 
 
 public class LoginController {
-    ModelFactoryController modelFactoryController;
-//    User user;
-    PersonaController personaController = new PersonaController();
 
+    ModelFactoryController modelFactoryController;
+    PersonaController personaController = new PersonaController();
     ClienteController clienteController = new ClienteController();
 
     public LoginController(ModelFactoryController modelFactoryController) throws IOException {
         this.modelFactoryController = modelFactoryController;
         modelFactoryController.setStorify(new Storify());
-//        modelFactoryController.getStorify().setUsers(Persistence.loadUsers());
-//        modelFactoryController.getStorify().setAdministrators(Persistence.loadAdministrator());
-//        modelFactoryController.getStorify().setSongs(loadSongs());
-//        modelFactoryController.setFavoriteSongs(loadSongsUser());
-//        modelFactoryController.getStorify().setArtists(Persistence.loadArtist());
-//        if (modelFactoryController.getStorify().getUsers().size() == 0) {
-//            initializeUsers();
-//        }
-//        if (modelFactoryController.getStorify().getAdministrators().size() == 0) {
-//            initializeAdministrator();
-//        }
-    }
 
-//    public void initializeUsers() throws UserExceptions, IOException {
-//        this.modelFactoryController.getStorify().getUsers().add(new User("user", "user1", "user1@gmail.com", "src/main/resources/Persistence/SongListUser.txt"));
-//        Persistence.saveUser(modelFactoryController.getStorify().getUsers());
-//        this.modelFactoryController.setFavoriteSongs(Persistence.loadSongsUser());
-//    }
-//
-//    public void initializeAdministrator() throws UserExceptions, IOException {
-//        this.modelFactoryController.getStorify().getAdministrators().add(new Administrator("admin", "$aDmiN"));
-//        Persistence.saveAdministrator(modelFactoryController.getStorify().getAdministrators());
-//    }
+    }
 
     public void login(String userName, String password) {
 
         Persona user = personaController.verificarLogin(userName, password);
-
-        List<InformeCliente> informeCliente = clienteController.listarInformesPorEstado("atendido");
-
-        for ( int i = 0; i < informeCliente.size(); i++ ) {
-            System.out.println(informeCliente.get(i).toString());
-        }
 
         if (user != null) {
 
@@ -69,37 +41,10 @@ public class LoginController {
 
         }
 
-//        else if (validateAdministrator(userName, password)) {
-//            this.modelFactoryController.getStorify().setAministrator(true);
-//            this.modelFactoryController.getStorify().setAdministrator(administrator);
-//        }
-
         else {
             preparateAlert();
         }
     }
-
-//    private boolean validateUser(String userName, String password) {
-//        for (User user : modelFactoryController.getStorify().getUsers()) {
-//            if (user.getUsername().equals(userName) && user.getPassword().equals(password)) {
-//                this.user = user;
-//                navigateToHomeUser();
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
-//
-//    private boolean validateAdministrator(String userName, String password) {
-//        for (Administrator administrator : modelFactoryController.getStorify().getAdministrators()) {
-//            if (administrator.getUsername().equals(userName) && administrator.getPassword().equals(password)) {
-//                this.administrator = administrator;
-//                navigateToHomeAdministrator();
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
 
     private void navigateToHomeUser() {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("homePage-view.fxml"));
@@ -115,21 +60,6 @@ public class LoginController {
         getStage.stage.centerOnScreen();
         getStage.stage.show();
     }
-
-//    private void navigateToHomeAdministrator() {
-//        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("addArtist-view.fxml"));
-//        Scene scene = null;
-//        try {
-//            scene = new Scene(fxmlLoader.load(), 1280, 705);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//        getStage.stage.setTitle(null);
-//        getStage.stage.setScene(scene);
-//        getStage.stage.centerOnScreen();
-//        getStage.stage.show();
-//    }
 
     public void preparateAlert() {
         CustomAlert.showMessage("¡Notificación!", "Usuario o contraseña incorrectos.",

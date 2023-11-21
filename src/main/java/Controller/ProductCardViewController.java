@@ -20,31 +20,18 @@ public class ProductCardViewController {
 
     @FXML
     private ImageView image;
-
     @FXML
     private VBox contentImage;
-
     @FXML
     private Text nombreProducto;
-
     @FXML
     private Text descripcion;
-
     @FXML
     private Text precio;
-
-
     @FXML
     private Text codProducto;
-
-
     @FXML
     private HBox idProducto;
-
-    @FXML
-    private Button btnFavoritos;
-
-    Storify storify = ModelFactoryController.getInstance().getStorify();
 
     @FXML
     void initialize(){
@@ -52,7 +39,6 @@ public class ProductCardViewController {
         idProducto.setId(""+modelFactoryController.getCurrentProduct().getCodproducto());
         setProducto();
     }
-
 
     private void setProducto() {
         Producto product = modelFactoryController.getCurrentProduct();

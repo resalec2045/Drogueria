@@ -11,7 +11,6 @@ public class LoginViewController {
 
     @FXML
     private TextField fieldUserName;
-
     @FXML
     private TextField fieldPassword;
 

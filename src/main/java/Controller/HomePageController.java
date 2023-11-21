@@ -49,7 +49,6 @@ public class HomePageController {
     ProveedorController proveedorController = new ProveedorController();
 
 
-
     List<Producto> productos = productoController.listarProductos();
     List<Factura> facturas = facturaController.listarFacturas();
     List<Domicilio> domicilios = domicilioController.listarDomicilios();
@@ -168,6 +167,51 @@ public class HomePageController {
 
     }
 
+    public void addlistarInformes(List<Object> informe) {
+        containerCards.getChildren().removeAll(containerCards.getChildren());
+        arrayInformes.removeAll();
+
+        ArrayList arrayList = (ArrayList) informe.get(0);
+
+        for (int i = 0; i < arrayList.size(); i++) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("VariableCard-view.fxml"));
+            arrayInformes.add(i, loader);
+            modelFactoryController.setCurrentInforme(arrayList.get(i));
+            try {
+                containerCards.getChildren().add(arrayInformes.get(i).load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    public void addCardsToView() {
+
+        containerCards.getChildren().removeAll(containerCards.getChildren());
+        arrayListProducts.removeAll();
+
+        for (int i = 0; i < productos.size(); i++) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductCard-view.fxml"));
+            arrayListProducts.add(i, loader);
+            modelFactoryController.setCurrentProduct(productos.get(i));
+            try {
+                containerCards.getChildren().add(arrayListProducts.get(i).load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    @FXML
+    public void navToLogin() {
+        NavBar navBar = new NavBar();
+        navBar.navigateToLogin();
+    }
+
+//    LISTAR INFORMES
+
     @FXML
     public void buscarInforme() {
 
@@ -225,51 +269,5 @@ public class HomePageController {
         }
 
     }
-
-    public void addlistarInformes(List<Object> informe) {
-        containerCards.getChildren().removeAll(containerCards.getChildren());
-        arrayInformes.removeAll();
-
-        ArrayList arrayList = (ArrayList) informe.get(0);
-
-        for (int i = 0; i < arrayList.size(); i++) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("VariableCard-view.fxml"));
-            arrayInformes.add(i, loader);
-            modelFactoryController.setCurrentInforme(arrayList.get(i));
-            try {
-                containerCards.getChildren().add(arrayInformes.get(i).load());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    public void addCardsToView() {
-
-        containerCards.getChildren().removeAll(containerCards.getChildren());
-        arrayListProducts.removeAll();
-
-        for (int i = 0; i < productos.size(); i++) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductCard-view.fxml"));
-            arrayListProducts.add(i, loader);
-            modelFactoryController.setCurrentProduct(productos.get(i));
-            try {
-                containerCards.getChildren().add(arrayListProducts.get(i).load());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    @FXML
-    public void navToLogin() {
-        NavBar navBar = new NavBar();
-        navBar.navigateToLogin();
-    }
-
-//    LISTAR INFORMES
-
 
 }

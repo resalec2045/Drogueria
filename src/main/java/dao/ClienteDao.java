@@ -18,8 +18,7 @@ public class ClienteDao {
     public ClienteDao(Connection con) {
         this.con = con;
     }
-
-
+    
     public List<InformeCliente> listarInformesCLientes(String estado) {
         List<InformeCliente> resultado = new ArrayList<>();
 
