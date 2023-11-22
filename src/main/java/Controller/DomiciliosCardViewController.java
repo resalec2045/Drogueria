@@ -3,6 +3,7 @@ package Controller;
 import Models.Reportes.Domicilio;
 import Utils.ModelFactoryController;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -20,15 +21,15 @@ public class DomiciliosCardViewController {
     @FXML
     private HBox idProducto;
     @FXML
-    private Text coddomicilio;
+    private TextField coddomicilio;
     @FXML
-    private Text horaenvio;
+    private TextField horaenvio;
     @FXML
-    private Text direccion;
+    private TextField direccion;
     @FXML
-    private Text fechafacturacion;
+    private TextField fechafacturacion;
     @FXML
-    private Text total;
+    private TextField total;
 
     @FXML
     void initialize() {

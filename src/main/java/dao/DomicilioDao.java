@@ -29,8 +29,7 @@ public class DomicilioDao {
                     "FROM\n" +
                     "    ordendomicilio" +
                     "    INNER JOIN factura ON ordendomicilio.factura_codfactura = factura.codfactura" +
-                    "    INNER JOIN cliente ON factura.cliente_persona_idpersona = cliente.persona_idpersona" +
-                    "    WHERE " + modelFactoryController.getStorify().getUser().getId() + " = cliente.persona_idpersona";
+                    "    INNER JOIN cliente ON factura.cliente_persona_idpersona = cliente.persona_idpersona";
 
             final PreparedStatement statement = con
                     .prepareStatement(sql);

@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -35,9 +36,15 @@ public class HomePageController {
     @FXML
     private Button btnBuscar;
     @FXML
+    private Button btnBuscarElemento;
+    @FXML
+    private TextField fieldElemento;
+    @FXML
     public VBox containerCards;
     @FXML
     private ChoiceBox choiceInforme;
+
+    private int paginaActual = 1;
 
     ProductoController productoController = new ProductoController();
     FacturaController facturaController = new FacturaController();
@@ -79,6 +86,8 @@ public class HomePageController {
     @FXML
     void showDomicilio() {
 
+        paginaActual = 3;
+
         choiceInforme.setVisible(false);
         btnBuscar.setVisible(false);
 
@@ -86,7 +95,7 @@ public class HomePageController {
         modelFactoryController.isArtist = new SimpleBooleanProperty(true);
         containerCards.getChildren().removeAll(containerCards.getChildren());
 
-        for (int i = 0; i < facturas.size(); i++) {
+        for (int i = 0; i < domicilios.size(); i++) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("DomiciliosCard-view.fxml"));
             arrayDomicilio.add(i, loader);
             modelFactoryController.setCurrentDomilicio(domicilios.get(i));
@@ -104,6 +113,8 @@ public class HomePageController {
 
     @FXML
     public void showFactura() {
+
+        paginaActual = 2;
 
         choiceInforme.setVisible(false);
         btnBuscar.setVisible(false);
@@ -132,6 +143,8 @@ public class HomePageController {
     @FXML
     void showProducts() {
 
+        paginaActual = 1;
+
         choiceInforme.setVisible(false);
         btnBuscar.setVisible(false);
 
@@ -154,6 +167,8 @@ public class HomePageController {
 
     @FXML
     public void showInformes() {
+
+        paginaActual = 4;
 
         containerCards.getChildren().removeAll(containerCards.getChildren());
 
@@ -203,6 +218,51 @@ public class HomePageController {
         }
 
     }
+
+    @FXML
+    void crearElemento() throws IOException {
+
+    }
+    @FXML
+    void buscarElemento() throws IOException {
+
+        if (paginaActual == 1) {
+            productos = productoController.BuscarProductoPorNombre(fieldElemento.getText());
+
+            containerCards.getChildren().removeAll(containerCards.getChildren());
+            arrayListProducts.removeAll();
+
+            for (int i = 0; i < productos.size(); i++) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductCard-view.fxml"));
+                arrayListProducts.add(i, loader);
+                modelFactoryController.setCurrentProduct(productos.get(i));
+                try {
+                    containerCards.getChildren().add(arrayListProducts.get(i).load());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        } else if (paginaActual == 2) {
+
+            facturas = facturaController.searchFactura(fieldElemento.getText());
+
+            containerCards.getChildren().removeAll(containerCards.getChildren());
+
+            for (int i = 0; i < facturas.size(); i++) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("FacturaCard-view.fxml"));
+                arrayFacturas.add(i, loader);
+                modelFactoryController.setCurrentFacturas(facturas.get(i));
+                try {
+                    containerCards.getChildren().add(arrayFacturas.get(i).load());
+                } catch (IOException e) {
+                }
+            }
+        } else if (paginaActual == 3) {
+
+        }
+
+    }
+
 
     @FXML
     public void navToLogin() {

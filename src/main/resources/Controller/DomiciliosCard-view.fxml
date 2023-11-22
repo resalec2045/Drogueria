@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <HBox fx:id="idProducto" prefHeight="176.0" prefWidth="584.0" style="-fx-border-color: black; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DomiciliosCardViewController">
    <stylesheets>
@@ -33,16 +32,12 @@
             <VBox fx:id="contentImage" layoutX="265.0" layoutY="1.0" prefHeight="178.0" prefWidth="317.0" style="-fx-padding: 30px;">
                <children>
                   <AnchorPane prefHeight="13.0" prefWidth="257.0" />
-                  <Text fx:id="coddomicilio" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="coddomicilio" textAlignment="RIGHT" wrappingWidth="233.0">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Text>
+                  <TextField fx:id="coddomicilio" />
                   <AnchorPane prefHeight="20.0" prefWidth="257.0" />
-                  <Text fx:id="horaenvio" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="horaenvio" textAlignment="RIGHT" wrappingWidth="237.0" />
-                  <Text fx:id="direccion" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="direccion" textAlignment="RIGHT" wrappingWidth="241.0" />
-                  <Text fx:id="fechafacturacion" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="fechafacturacion" textAlignment="RIGHT" wrappingWidth="237.0" />
-                  <Text fx:id="total" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="total" textAlignment="RIGHT" wrappingWidth="237.0" />
+                  <TextField fx:id="horaenvio" />
+                  <TextField fx:id="direccion" />
+                  <TextField fx:id="fechafacturacion" />
+                  <TextField fx:id="total" />
                </children>
             </VBox>
          </children>

@@ -159,4 +159,59 @@ public class ProductoDao {
         return resultado;
     }
 
+    public void deleteProduct(int id) {
+
+        try {
+            String sql1 = "DELETE FROM inventarioproducto WHERE producto_codproducto = ?;";
+            String sql2 = "DELETE FROM pedidoproducto WHERE producto_codproducto = ?;";
+            String sql3 = "DELETE FROM productocategoria WHERE producto_codproducto = ?;";
+            String sql4 = "DELETE FROM productofactura WHERE productodrogueria_producto_codproducto = ?;";
+            String sql5 = "DELETE FROM productodrogueria WHERE producto_codproducto = ?;";
+            String sql6 = "DELETE FROM producto WHERE codproducto = ?;";
+
+            final PreparedStatement statement1 = con.prepareStatement(sql1);
+            final PreparedStatement statement2 = con.prepareStatement(sql2);
+            final PreparedStatement statement3 = con.prepareStatement(sql3);
+            final PreparedStatement statement4 = con.prepareStatement(sql4);
+            final PreparedStatement statement5 = con.prepareStatement(sql5);
+            final PreparedStatement statement6 = con.prepareStatement(sql6);
+
+            statement1.setInt(1, id);
+            statement2.setInt(1, id);
+            statement3.setInt(1, id);
+            statement4.setInt(1, id);
+            statement5.setInt(1, id);
+            statement6.setInt(1, id);
+
+            statement1.executeUpdate();
+            statement2.executeUpdate();
+            statement3.executeUpdate();
+            statement4.executeUpdate();
+            statement5.executeUpdate();
+            statement6.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateProduct(Producto producto) {
+
+        try {
+            String sql = "UPDATE producto SET nombre = ?, descripcion = ?, precio = ? WHERE codproducto = ?;";
+
+            final PreparedStatement statement = con.prepareStatement(sql);
+
+            statement.setString(1, producto.getNombre());
+            statement.setString(2, producto.getDescripcion());
+            statement.setDouble(3, producto.getPrecio());
+            statement.setInt(4, producto.getCodproducto());
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

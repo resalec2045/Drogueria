@@ -4,34 +4,42 @@ package Controller;
 import Models.Producto.Producto;
 import Models.Storify;
 import Utils.ModelFactoryController;
+import daoController.ProductoController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class ProductCardViewController {
 
     ModelFactoryController modelFactoryController;
+    ProductoController productoController = new ProductoController();
 
     @FXML
     private ImageView image;
     @FXML
     private VBox contentImage;
     @FXML
-    private Text nombreProducto;
+    private TextField nombreProducto;
     @FXML
-    private Text descripcion;
+    private TextField descripcion;
     @FXML
-    private Text precio;
+    private TextField precio;
     @FXML
-    private Text codProducto;
+    private TextField codProducto;
     @FXML
     private HBox idProducto;
+    @FXML
+    private Button btnEliminar;
+    @FXML
+    private Button btnActualizar;
 
     @FXML
     void initialize(){
@@ -50,5 +58,19 @@ public class ProductCardViewController {
         precio.setText("Precio: " + product.getPrecio() + "");
         codProducto.setText("Codigo del producto: " + product.getCodproducto() + "");
     }
+
+    @FXML
+    void eliminarProducto() throws IOException {
+        productoController.deleteProduct(Integer.parseInt(idProducto.getId()));
+        JOptionPane.showMessageDialog(null, "Producto eliminado");
+    }
+
+    @FXML
+    void actualizarProducto() throws IOException {
+        productoController.updateProduct(new Producto(Integer.parseInt(idProducto.getId()), nombreProducto.getText(), descripcion.getText(), Double.parseDouble(precio.getText())));
+        JOptionPane.showMessageDialog(null, "Producto actualizado");
+    }
+
+
 
 }

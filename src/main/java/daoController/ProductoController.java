@@ -33,4 +33,12 @@ public class ProductoController {
         return this.productoDao.listarCantidadProductoStock();
     }
 
+    public void deleteProduct(int codProducto) {
+        this.productoDao.deleteProduct(codProducto);
+    }
+
+    public void updateProduct(Producto producto) {
+        this.productoDao.updateProduct(producto);
+    }
+
 }
