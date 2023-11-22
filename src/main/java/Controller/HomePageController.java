@@ -2,22 +2,21 @@ package Controller;
 import Models.Producto.Producto;
 import Models.Reportes.*;
 import Models.turnos.Turnos;
-import Utils.ModelFactoryController;
-import Utils.NavBar;
-import Utils.PdfGenerator;
-import Utils.TiposInformes;
+import Utils.*;
 import daoController.*;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.lang.invoke.SwitchPoint;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -278,6 +277,39 @@ public class HomePageController {
     @FXML
     void crearElemento() throws IOException {
 
+
+        switch (paginaActual){
+            case 1:
+                abrirVistaCrear("productCardCrear-view.fxml");
+                break;
+            case 2:
+                abrirVistaCrear("FacturaCardCrear-view.fxml");
+                break;
+            case 3:
+                abrirVistaCrear("DomiciliosCardCrear-view.fxml");
+                break;
+            case 4:
+                abrirVistaCrear("TurnosCardCrear-view.fxml");
+                break;
+            default:
+                System.out.println("No se ha seleccionado una pagina");
+                break;
+        }
+    }
+
+    void abrirVistaCrear(String vista){
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource(vista));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 584, 224);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        getStage.stage.setTitle(null);
+        getStage.stage.setScene(scene);
+        getStage.stage.centerOnScreen();
+        getStage.stage.show();
     }
     @FXML
     void buscarElemento() throws IOException {

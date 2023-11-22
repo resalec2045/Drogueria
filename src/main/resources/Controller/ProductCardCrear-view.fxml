@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="idProducto" prefHeight="249.0" prefWidth="584.0" style="-fx-border-color: black; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProductCardViewController">
+   <stylesheets>
+      <URL value="@../css/styles.css" />
+   </stylesheets>
+   <children>
+      <AnchorPane prefHeight="246.0" prefWidth="582.0">
+         <children>
+            <BorderPane prefHeight="249.0" prefWidth="257.0">
+               <center>
+                  <ImageView fx:id="image" fitHeight="139.0" fitWidth="154.0" layoutX="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/caratulas/producto.png" />
+                     </image>
+                  </ImageView>
+               </center>
+               <left>
+                  <AnchorPane prefHeight="163.0" prefWidth="34.0" BorderPane.alignment="CENTER" />
+               </left>
+            </BorderPane>
+
+            <VBox fx:id="contentImage" layoutX="265.0" layoutY="1.0" prefHeight="255.0" prefWidth="317.0" style="-fx-padding: 30px;">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+                  <AnchorPane prefHeight="13.0" prefWidth="257.0" />
+                  <TextField fx:id="nombreProducto" styleClass="search__container" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Codigo" />
+                  <AnchorPane prefHeight="20.0" prefWidth="257.0" />
+                  <TextField fx:id="descripcion" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Precio" />
+                  <TextField fx:id="precio" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Codigo del producto" />
+                  <TextField fx:id="codProducto" />
+                  <AnchorPane prefHeight="225.0" prefWidth="257.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnCrear" mnemonicParsing="false" text="crear" />
+                        <AnchorPane prefHeight="30.0" prefWidth="21.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

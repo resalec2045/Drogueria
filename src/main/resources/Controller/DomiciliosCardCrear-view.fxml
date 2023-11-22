@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="idProducto" prefHeight="224.0" prefWidth="584.0" style="-fx-border-color: black; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DomiciliosCardViewController">
+   <stylesheets>
+      <URL value="@../css/styles.css" />
+   </stylesheets>
+   <children>
+      <AnchorPane prefHeight="130.0" prefWidth="582.0">
+         <children>
+            <BorderPane prefHeight="178.0" prefWidth="225.0">
+               <center>
+                  <ImageView fx:id="image" fitHeight="139.0" fitWidth="154.0" layoutX="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/caratulas/envio.png" />
+                     </image>
+                  </ImageView>
+               </center>
+               <left>
+                  <AnchorPane prefHeight="163.0" prefWidth="34.0" BorderPane.alignment="CENTER" />
+               </left>
+            </BorderPane>
+
+            <VBox fx:id="contentImage" layoutX="265.0" layoutY="1.0" prefHeight="222.0" prefWidth="317.0" style="-fx-padding: 30px;">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Codigo" />
+                  <TextField fx:id="coddomicilio" prefHeight="25.0" prefWidth="221.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de envio" />
+                  <TextField fx:id="horaenvio" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Direccion" />
+                  <TextField fx:id="direccion" />
+                  <AnchorPane prefHeight="26.0" prefWidth="257.0" />
+                  <HBox prefHeight="23.0" prefWidth="257.0">
+                     <children>
+                        <Button fx:id="btnCrear" mnemonicParsing="false" text="Crear" />
+                        <AnchorPane prefHeight="25.0" prefWidth="30.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
