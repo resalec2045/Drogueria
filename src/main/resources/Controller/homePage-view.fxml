@@ -35,6 +35,7 @@
                         <Button fx:id="btnAllSongs" mnemonicParsing="false" onAction="#showProducts" styleClass="nav__button" text="Productos" />
                         <Button fx:id="btnArtists" mnemonicParsing="false" onAction="#showFactura" styleClass="nav__button" text="Facturas" />
                         <Button fx:id="btnDomicilio" mnemonicParsing="false" onAction="#showDomicilio" styleClass="nav__button" text="Domicilios" />
+                              <Button fx:id="btnTurnos" mnemonicParsing="false" onAction="#showTurnos" styleClass="nav__button" text="Turnos" />
                         <Button fx:id="btnInformes" mnemonicParsing="false" onAction="#showInformes" styleClass="nav__button" text="Informes" />
                           </children>
                        </HBox>

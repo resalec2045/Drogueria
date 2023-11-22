@@ -6,6 +6,7 @@ import Models.Producto.Producto;
 import Models.Reportes.Domicilio;
 import Models.Reportes.Factura;
 import Models.Storify;
+import Models.turnos.Turnos;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +16,8 @@ public class ModelFactoryController {
     private Producto currentProduct;
     private Factura currentFacturas;
     private Domicilio currentDomilicio;
+
+    private Turnos currentTurno;
     private Object currentInforme;
 
     private ObservableList<Producto> favoriteSongs = FXCollections.observableArrayList();
@@ -76,4 +79,14 @@ public class ModelFactoryController {
     public void setCurrentDomilicio(Domicilio currentDomilicio) {
         this.currentDomilicio = currentDomilicio;
     }
+
+    public Turnos getCurrentTurno() {
+        return currentTurno;
+    }
+
+    public void setCurrentTurno(Turnos currentTurno) {
+        this.currentTurno = currentTurno;
+    }
+
+
 }

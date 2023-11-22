@@ -1,6 +1,7 @@
 package Controller;
 import Models.Producto.Producto;
 import Models.Reportes.*;
+import Models.turnos.Turnos;
 import Utils.ModelFactoryController;
 import Utils.NavBar;
 import Utils.PdfGenerator;
@@ -32,6 +33,8 @@ public class HomePageController {
     @FXML
     private Button btnDomicilio;
     @FXML
+    private Button btnTurnos;
+    @FXML
     private Button btnCrear;
     @FXML
     private Button btnInformes;
@@ -51,6 +54,7 @@ public class HomePageController {
     ProductoController productoController = new ProductoController();
     FacturaController facturaController = new FacturaController();
     DomicilioController domicilioController = new DomicilioController();
+    TurnosController turnosController = new TurnosController();
     ClienteController clienteController = new ClienteController();
     EmpleadoController empleadoController = new EmpleadoController();
     PersonaController personaController = new PersonaController();
@@ -61,11 +65,13 @@ public class HomePageController {
     List<Producto> productos = productoController.listarProductos();
     List<Factura> facturas = facturaController.listarFacturas();
     List<Domicilio> domicilios = domicilioController.listarDomicilios();
+    List<Turnos> turnos = turnosController.listarTurnos();
 
     String pressedStyle = "-fx-border-color: purple;  -fx-border-width: 2px;  -fx-border-radius: 2px;";
     ObservableList<FXMLLoader> arrayListProducts = FXCollections.observableArrayList();
     ObservableList<FXMLLoader> arrayFacturas = FXCollections.observableArrayList();
     ObservableList<FXMLLoader> arrayDomicilio = FXCollections.observableArrayList();
+    ObservableList<FXMLLoader> arrayTurnos = FXCollections.observableArrayList();
     ObservableList<FXMLLoader> arrayInformes = FXCollections.observableArrayList();
 
     @FXML
@@ -114,6 +120,39 @@ public class HomePageController {
         btnArtists.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
         btnInformes.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
         btnDomicilio.setStyle(pressedStyle);
+        btnTurnos.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+    }
+
+    @FXML
+    void showTurnos() {
+
+        paginaActual = 4;
+        btnBuscarElemento.setVisible(true);
+        fieldElemento.setVisible(true);
+        btnCrear.setVisible(true);
+
+        choiceInforme.setVisible(false);
+        btnBuscar.setVisible(false);
+
+        modelFactoryController.sectionCurrent = "Artistas";
+        modelFactoryController.isArtist = new SimpleBooleanProperty(true);
+        containerCards.getChildren().removeAll(containerCards.getChildren());
+
+        for (int i = 0; i < turnos.size(); i++) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TurnosCard-view.fxml"));
+            arrayTurnos.add(i, loader);
+            modelFactoryController.setCurrentTurno(turnos.get(i));
+            try {
+                containerCards.getChildren().add(arrayTurnos.get(i).load());
+            } catch (IOException e) {
+            }
+        }
+
+        btnAllSongs.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+        btnArtists.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+        btnInformes.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+        btnDomicilio.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
+        btnTurnos.setStyle(pressedStyle);
     }
 
     @FXML
@@ -145,6 +184,7 @@ public class HomePageController {
         btnDomicilio.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
         btnInformes.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
         btnArtists.setStyle(pressedStyle);
+        btnTurnos.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
 
     }
 
@@ -173,13 +213,14 @@ public class HomePageController {
         btnDomicilio.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
         btnInformes.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
         btnAllSongs.setStyle(pressedStyle);
+        btnTurnos.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
 
     }
 
     @FXML
     public void showInformes() {
 
-        paginaActual = 4;
+        paginaActual = 5;
         btnBuscarElemento.setVisible(false);
         fieldElemento.setVisible(false);
         btnCrear.setVisible(false);
@@ -193,6 +234,7 @@ public class HomePageController {
         btnAllSongs.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
         btnDomicilio.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
         btnInformes.setStyle(pressedStyle);
+        btnTurnos.setStyle("-fx-border-color: none;  -fx-border-width: none;  -fx-border-radius: none;");
 
     }
 
@@ -286,7 +328,22 @@ public class HomePageController {
                 } catch (IOException e) {
                 }
             }
+        } else if (paginaActual == 4) {
+
+        turnos = turnosController.buscarDomicilioPorID(fieldElemento.getText());
+
+        containerCards.getChildren().removeAll(containerCards.getChildren());
+
+        for (int i = 0; i < turnos.size(); i++) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TurnosCard-view.fxml"));
+            arrayTurnos.add(i, loader);
+            modelFactoryController.setCurrentTurno(turnos.get(i));
+            try {
+                containerCards.getChildren().add(arrayTurnos.get(i).load());
+            } catch (IOException e) {
+            }
         }
+    }
 
     }
 
