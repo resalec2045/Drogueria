@@ -16,6 +16,12 @@ public class Domicilio {
         this.total = total;
     }
 
+    public Domicilio(String coddomicilio, String horaenvio, String direccion) {
+        this.coddomicilio = coddomicilio;
+        this.horaenvio = horaenvio;
+        this.direccion = direccion;
+    }
+
     public String getCoddomicilio() {
         return coddomicilio;
     }

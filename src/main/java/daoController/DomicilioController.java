@@ -21,4 +21,16 @@ public class DomicilioController {
         return this.domicilioDao.listarDomicilios();
     }
 
+    public void eliminarDomicilio(String id) {
+        this.domicilioDao.eliminarDomicilio(id);
+    }
+
+    public void actualizarDomicilio(Domicilio domicilio) {
+        this.domicilioDao.actualizarDomicilio(domicilio);
+    }
+
+    public List<Domicilio> buscarDomicilioPorID(String id) {
+        return this.domicilioDao.BuscarDomicilioPorId(id);
+    }
+
 }

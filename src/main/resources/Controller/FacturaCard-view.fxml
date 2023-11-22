@@ -9,8 +9,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<HBox fx:id="idProducto" prefHeight="176.0" prefWidth="584.0" style="-fx-border-color: black; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FacturaCardViewController">
+<HBox fx:id="idProducto" prefHeight="229.0" prefWidth="584.0" style="-fx-border-color: black; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FacturaCardViewController">
    <stylesheets>
       <URL value="@../css/styles.css" />
    </stylesheets>
@@ -30,13 +31,16 @@
                </left>
             </BorderPane>
 
-            <VBox fx:id="contentImage" layoutX="265.0" layoutY="1.0" prefHeight="178.0" prefWidth="317.0" style="-fx-padding: 30px;">
+            <VBox fx:id="contentImage" layoutX="265.0" layoutY="1.0" prefHeight="229.0" prefWidth="317.0" style="-fx-padding: 30px;">
                <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
                   <AnchorPane prefHeight="13.0" prefWidth="257.0" />
                   <TextField fx:id="nombreProducto" />
-                  <AnchorPane prefHeight="20.0" prefWidth="257.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha" />
                   <TextField fx:id="descripcion" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total" />
                   <TextField fx:id="precio" />
+                  <AnchorPane prefHeight="155.0" prefWidth="257.0" />
                   <HBox prefHeight="20.0" prefWidth="257.0">
                      <children>
                         <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarFactura" text="Eliminar" />

@@ -97,20 +97,22 @@ public class ClienteDao {
         return resultado;
     }
 
-    public List<ClienteCompra> ListarClienteConMasComprasPrimerSemestre () {
+    public List<ClienteCompra> ListarProductoMayorCompraClientePrimerSemestre() {
 
         List<ClienteCompra> resultado = new ArrayList<>();
 
         try {
-            String sql = "SELECT\n" +
-                    "    c.persona_idpersona, p.nombre, COUNT(*) AS total_compras \n" +
-                    "FROM\n" +
-                    "    cliente c\n" +
-                    "    INNER JOIN factura f ON c.persona_idpersona = f.cliente_persona_idpersona\n" +
-                    "    INNER JOIN persona p ON c.persona_idpersona = p.idpersona\n" +
-                    " WHERE YEAR(f.fechafacturacion) = YEAR(CURRENT_DATE) AND MONTH(f.fechafacturacion) BETWEEN 1 AND 6\n" +
-                    " GROUP BY c.persona_idpersona, p.nombre\n" +
-                    "    ORDER BY total_compras DESC LIMIT 1";
+            String sql = "SELECT c.persona_idpersona, p.nombre, COUNT(*) AS total_compras, productos.nombre AS productoNombre\n" +
+                    "FROM cliente c\n" +
+                    "INNER JOIN factura f ON c.persona_idpersona = f.cliente_persona_idpersona\n" +
+                    "INNER JOIN persona p ON c.persona_idpersona = p.idpersona\n" +
+                    "INNER JOIN productofactura pf ON f.codfactura = pf.factura_codfactura\n" +
+                    "INNER JOIN productodrogueria pd ON pf.productodrogueria_drogueria_coddrogueria = pd.drogueria_coddrogueria\n" +
+                    "INNER JOIN (SELECT * FROM producto WHERE nombre LIKE '%ina%' AND precio > 6000) productos ON pd.producto_codproducto = productos.codproducto\n" +
+                    "WHERE YEAR(f.fechafacturacion) = YEAR(CURRENT_DATE) AND MONTH(f.fechafacturacion) BETWEEN 1 AND 6\n" +
+                    "GROUP BY c.persona_idpersona, p.nombre\n" +
+                    "ORDER BY total_compras DESC\n" +
+                    "LIMIT 1;";
 
             final PreparedStatement statement = con
                     .prepareStatement(sql);
@@ -123,7 +125,8 @@ public class ClienteDao {
                         resultado.add( new ClienteCompra(
                                 resultSet.getString("persona_idpersona"),
                                 resultSet.getString("nombre"),
-                                resultSet.getString("total_compras")
+                                resultSet.getString("total_compras"),
+                                resultSet.getString("productoNombre")
                         ));
                     }
                 }

@@ -51,8 +51,8 @@ public class FacturaCardViewController {
         String path = "file:" + "src/main/resources/imagenes/caratulas/factura.png";
         Image image1 = new Image(path);
         image.setImage(image1);
-        descripcion.setText("Fecha: " + factura.getFechaFacturacion());
-        precio.setText("Total: " + factura.getTotal());
+        descripcion.setText("" + factura.getFechaFacturacion());
+        precio.setText("" + factura.getTotal());
     }
 
     @FXML

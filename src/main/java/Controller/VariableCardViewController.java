@@ -80,6 +80,7 @@ public class VariableCardViewController {
             var1.setText( "ID Persona: " + ((ClienteCompra) informe).getPersona_idpersona());
             var2.setText( "Nombre: " + ((ClienteCompra) informe).getNombre());
             var3.setText( "Total Compras: " + ((ClienteCompra) informe).getTotal_compras());
+            var4.setText( "Nombre Producto: " + ((ClienteCompra) informe).getProducto_nombre());
         } else if (informe instanceof  ProveedorCompania) {
             var1.setText( "Nombre Compania: " + ((ProveedorCompania) informe).getNombreCompania());
         } else if (informe instanceof  EmpleadoHorario) {

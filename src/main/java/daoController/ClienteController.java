@@ -26,7 +26,7 @@ public class ClienteController {
     }
 
     public List<ClienteCompra> ListarClienteConMasComprasPrimerSemestre() {
-        return this.clienteDao.ListarClienteConMasComprasPrimerSemestre();
+        return this.clienteDao.ListarProductoMayorCompraClientePrimerSemestre();
     }
 
 }

@@ -32,6 +32,8 @@ public class HomePageController {
     @FXML
     private Button btnDomicilio;
     @FXML
+    private Button btnCrear;
+    @FXML
     private Button btnInformes;
     @FXML
     private Button btnBuscar;
@@ -87,6 +89,9 @@ public class HomePageController {
     void showDomicilio() {
 
         paginaActual = 3;
+        btnBuscarElemento.setVisible(true);
+        fieldElemento.setVisible(true);
+        btnCrear.setVisible(true);
 
         choiceInforme.setVisible(false);
         btnBuscar.setVisible(false);
@@ -115,6 +120,9 @@ public class HomePageController {
     public void showFactura() {
 
         paginaActual = 2;
+        btnBuscarElemento.setVisible(true);
+        fieldElemento.setVisible(true);
+        btnCrear.setVisible(true);
 
         choiceInforme.setVisible(false);
         btnBuscar.setVisible(false);
@@ -144,9 +152,12 @@ public class HomePageController {
     void showProducts() {
 
         paginaActual = 1;
+        btnBuscarElemento.setVisible(true);
+        fieldElemento.setVisible(true);
 
         choiceInforme.setVisible(false);
         btnBuscar.setVisible(false);
+        btnCrear.setVisible(true);
 
         modelFactoryController.isArtist = new SimpleBooleanProperty(false);
         modelFactoryController.sectionCurrent = "Canciones";
@@ -169,6 +180,9 @@ public class HomePageController {
     public void showInformes() {
 
         paginaActual = 4;
+        btnBuscarElemento.setVisible(false);
+        fieldElemento.setVisible(false);
+        btnCrear.setVisible(false);
 
         containerCards.getChildren().removeAll(containerCards.getChildren());
 
@@ -259,6 +273,19 @@ public class HomePageController {
             }
         } else if (paginaActual == 3) {
 
+            domicilios = domicilioController.buscarDomicilioPorID(fieldElemento.getText());
+
+            containerCards.getChildren().removeAll(containerCards.getChildren());
+
+            for (int i = 0; i < domicilios.size(); i++) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("DomiciliosCard-view.fxml"));
+                arrayDomicilio.add(i, loader);
+                modelFactoryController.setCurrentDomilicio(domicilios.get(i));
+                try {
+                    containerCards.getChildren().add(arrayDomicilio.get(i).load());
+                } catch (IOException e) {
+                }
+            }
         }
 
     }

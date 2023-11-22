@@ -54,9 +54,9 @@ public class ProductCardViewController {
         String path = "file:" + "src/main/resources/imagenes/caratulas/producto.png";
         Image image1 = new Image(path);
         image.setImage(image1);
-        descripcion.setText("Codigo: " + product.getDescripcion());
-        precio.setText("Precio: " + product.getPrecio() + "");
-        codProducto.setText("Codigo del producto: " + product.getCodproducto() + "");
+        descripcion.setText("" + product.getDescripcion());
+        precio.setText("" + product.getPrecio());
+        codProducto.setText("" + product.getCodproducto());
     }
 
     @FXML
