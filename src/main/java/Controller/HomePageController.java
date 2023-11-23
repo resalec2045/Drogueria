@@ -301,7 +301,7 @@ public class HomePageController {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource(vista));
         Scene scene = null;
         try {
-            scene = new Scene(fxmlLoader.load(), 584, 224);
+            scene = new Scene(fxmlLoader.load(), 584, 255);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

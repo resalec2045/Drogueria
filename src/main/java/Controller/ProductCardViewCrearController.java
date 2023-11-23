@@ -3,6 +3,7 @@ package Controller;
 
 import Models.Producto.Producto;
 import Utils.ModelFactoryController;
+import Utils.NavBar;
 import daoController.ProductoController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -35,9 +36,10 @@ public class ProductCardViewCrearController {
     @FXML
     private HBox idProducto;
     @FXML
-    private Button btnEliminar;
+    private Button btnCrear;
+
     @FXML
-    private Button btnActualizar;
+    private Button btnCrear1;
 
     @FXML
     void insertarProducto() throws IOException {
@@ -48,6 +50,17 @@ public class ProductCardViewCrearController {
                 Double.parseDouble(precio.getText())
         ));
         JOptionPane.showMessageDialog(null, "Producto insertado");
+
+        NavBar navBar = new NavBar();
+        navBar.navigateToHomePage();
+
+    }
+
+    @FXML
+    void cancelar() throws IOException {
+
+        NavBar navBar = new NavBar();
+        navBar.navigateToHomePage();
 
     }
 

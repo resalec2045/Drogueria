@@ -2,6 +2,7 @@ package Controller;
 
 import Models.turnos.Turnos;
 import Utils.ModelFactoryController;
+import Utils.NavBar;
 import daoController.TurnosController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -33,7 +34,10 @@ public class TurnosCardCrearVIewController {
     @FXML
     private Button btnEliminar;
     @FXML
-    private Button btnActualizar;
+    private Button btnCrear;
+
+    @FXML
+    private Button btnCrear1;
 
     @FXML
     void insertarTurno() throws IOException {
@@ -43,6 +47,16 @@ public class TurnosCardCrearVIewController {
                 Integer.parseInt(empleado_persona_idpersona.getText())
         ));
         JOptionPane.showMessageDialog(null, "Turno insertado");
+
+        NavBar navBar = new NavBar();
+        navBar.navigateToHomePage();
+
+    }
+    @FXML
+    void cancelar() throws IOException {
+
+        NavBar navBar = new NavBar();
+        navBar.navigateToHomePage();
 
     }
 }

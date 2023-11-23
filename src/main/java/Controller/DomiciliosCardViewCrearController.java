@@ -2,6 +2,7 @@ package Controller;
 
 import Models.Reportes.Domicilio;
 import Utils.ModelFactoryController;
+import Utils.NavBar;
 import Utils.getStage;
 import daoController.DomicilioController;
 import javafx.fxml.FXML;
@@ -40,6 +41,9 @@ public class DomiciliosCardViewCrearController {
     private Button btnCrear;
 
     @FXML
+    private Button btnCrear1;
+
+    @FXML
     void insertarDomicilio() throws IOException {
         domicilioController.insertarDomicilio(new Domicilio(
                 coddomicilio.getText(),
@@ -48,10 +52,15 @@ public class DomiciliosCardViewCrearController {
         ));
         JOptionPane.showMessageDialog(null, "Domicilio insertado");
 
-        //Obtener el Stage de la ventana actual
-        Stage stage = (Stage) getStage.stage.getScene().getWindow();
-        //Cerrar la ventana
-        stage.close();
+        NavBar navBar = new NavBar();
+        navBar.navigateToHomePage();
+    }
+    @FXML
+    void cancelar() throws IOException {
+
+        NavBar navBar = new NavBar();
+        navBar.navigateToHomePage();
+
     }
 
 

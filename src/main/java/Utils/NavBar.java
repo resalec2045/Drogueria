@@ -54,7 +54,7 @@ public class NavBar {
     public void navigateToHomePage() {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("homePage-view.fxml"));
         try {
-            scene = new Scene(fxmlLoader.load(), 1280, 705);
+            scene = new Scene(fxmlLoader.load(), 950, 698);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

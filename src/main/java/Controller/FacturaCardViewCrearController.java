@@ -2,6 +2,7 @@ package Controller;
 
 import Models.Reportes.Factura;
 import Utils.ModelFactoryController;
+import Utils.NavBar;
 import daoController.FacturaController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -36,6 +37,9 @@ public class FacturaCardViewCrearController {
     private Button btnCrear;
 
     @FXML
+    private Button btnCrear1;
+
+    @FXML
     void insertarFactura() throws IOException {
         facturaController.insertarFactura(new Factura(
                 nombreProducto.getText(),
@@ -43,6 +47,17 @@ public class FacturaCardViewCrearController {
                 precio.getText()
         ));
         JOptionPane.showMessageDialog(null, "Factura insertada");
+
+        NavBar navBar = new NavBar();
+        navBar.navigateToHomePage();
+
+    }
+
+    @FXML
+    void cancelar() throws IOException {
+
+        NavBar navBar = new NavBar();
+        navBar.navigateToHomePage();
 
     }
 

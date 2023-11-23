@@ -43,8 +43,9 @@
                   <AnchorPane prefHeight="155.0" prefWidth="257.0" />
                   <HBox prefHeight="20.0" prefWidth="257.0">
                      <children>
-                        <Button fx:id="btnCrear" mnemonicParsing="false" text="Crear" onAction="#insertarFactura" />
-                        <AnchorPane prefHeight="25.0" prefWidth="30.0" />
+                        <Button fx:id="btnCrear" mnemonicParsing="false" onAction="#insertarFactura" text="Crear" />
+                        <AnchorPane prefHeight="63.0" prefWidth="31.0" />
+                        <Button fx:id="btnCrear1" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
                      </children>
                   </HBox>
                </children>
