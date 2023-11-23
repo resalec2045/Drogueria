@@ -33,4 +33,8 @@ public class DomicilioController {
         return this.domicilioDao.BuscarDomicilioPorId(id);
     }
 
+    public void insertarDomicilio(Domicilio domicilio) {
+        this.domicilioDao.insertDomicilio(domicilio);
+    }
+
 }

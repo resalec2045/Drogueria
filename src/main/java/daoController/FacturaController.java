@@ -35,4 +35,8 @@ public class FacturaController {
         return this.facturaDao.BuscarFacturaPorNombre(factura);
     }
 
+    public void insertarFactura(Factura factura) {
+        this.facturaDao.insertFactura(factura);
+    }
+
 }

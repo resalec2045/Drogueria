@@ -41,4 +41,8 @@ public class ProductoController {
         this.productoDao.updateProduct(producto);
     }
 
+    public void insertarProducto(Producto producto) {
+        this.productoDao.insertProduct(producto);
+    }
+
 }

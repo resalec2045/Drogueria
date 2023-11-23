@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class FacturaDao {
 
@@ -128,6 +129,27 @@ public class FacturaDao {
         }
 
         return resultado;
+    }
+
+    public void insertFactura(Factura factura) {
+
+        Random random = new Random();
+
+        try {
+            String sql = "INSERT INTO factura (codfactura, fechafacturacion, total, cliente_persona_idpersona) VALUES (?, ?, ?, ?);";
+
+            final PreparedStatement statement = con.prepareStatement(sql);
+
+            statement.setInt(1, Integer.parseInt(factura.getCodFactura()));
+            statement.setString(2, factura.getFechaFacturacion());
+            statement.setInt(3, Integer.parseInt(factura.getTotal()));
+            statement.setInt(4, random.nextInt(10) + 1);
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<HBox fx:id="idProducto" prefHeight="224.0" prefWidth="584.0" style="-fx-border-color: black; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DomiciliosCardViewController">
+<HBox fx:id="idProducto" prefHeight="224.0" prefWidth="584.0" style="-fx-border-color: black; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DomiciliosCardViewCrearController">
    <stylesheets>
       <URL value="@../css/styles.css" />
    </stylesheets>
@@ -42,7 +37,7 @@
                   <AnchorPane prefHeight="26.0" prefWidth="257.0" />
                   <HBox prefHeight="23.0" prefWidth="257.0">
                      <children>
-                        <Button fx:id="btnCrear" mnemonicParsing="false" text="Crear" />
+                        <Button fx:id="btnCrear" mnemonicParsing="false" onAction="#insertarDomicilio" text="Crear" />
                         <AnchorPane prefHeight="25.0" prefWidth="30.0" />
                      </children>
                   </HBox>

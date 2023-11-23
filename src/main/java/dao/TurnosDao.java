@@ -112,4 +112,22 @@ public class TurnosDao {
 
         return resultado;
     }
+
+    public void insertTurno (Turnos turno) {
+        try {
+            String sql = "INSERT INTO turnoempleado (codturno, tipohorario, empleado_persona_idpersona) VALUES (?, ?, ?)";
+
+            final PreparedStatement statement = con
+                    .prepareStatement(sql);
+
+            try (statement) {
+                statement.setInt(1, turno.getCodturno());
+                statement.setString(2, turno.getTipohorario());
+                statement.setInt(3, turno.getEmpleado_persona_idpersona());
+                statement.execute();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

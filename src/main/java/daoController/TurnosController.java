@@ -31,4 +31,8 @@ public class TurnosController {
         return this.turnosDao.BuscarTurnosPorId(id);
     }
 
+    public void insertarTurnos(Turnos turnos) {
+        this.turnosDao.insertTurno(turnos);
+    }
+
 }

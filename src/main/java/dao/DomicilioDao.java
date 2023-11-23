@@ -126,5 +126,24 @@ public class DomicilioDao {
         return resultado;
     }
 
+    public void insertDomicilio (Domicilio domicilio) {
+        try {
+            String sql = "INSERT INTO ordendomicilio (coddomicilio, horaenvio, direccion, factura_codfactura) VALUES (?, ?, ?, ?)";
+
+            final PreparedStatement statement = con
+                    .prepareStatement(sql);
+
+            try (statement) {
+                statement.setInt(1, Integer.parseInt(domicilio.getCoddomicilio()));
+                statement.setString(2, domicilio.getHoraenvio());
+                statement.setString(3, domicilio.getDireccion());
+                statement.setInt(4, Integer.parseInt(domicilio.getCoddomicilio()));
+                statement.execute();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }

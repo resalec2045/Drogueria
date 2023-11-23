@@ -214,4 +214,22 @@ public class ProductoDao {
         }
     }
 
+    public void insertProduct(Producto producto){
+        try {
+            String sql = "INSERT INTO producto (codproducto, nombre, descripcion, precio) VALUES (?, ?, ?, ?);";
+
+            final PreparedStatement statement = con.prepareStatement(sql);
+
+            statement.setInt(1, producto.getCodproducto());
+            statement.setString(2, producto.getNombre());
+            statement.setString(3, producto.getDescripcion());
+            statement.setDouble(4, producto.getPrecio());
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
