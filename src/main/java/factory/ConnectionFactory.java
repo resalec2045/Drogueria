@@ -17,9 +17,9 @@ public class ConnectionFactory {
 
             connection = DriverManager.getConnection(url, "root", "");
 
-            if ( connection != null ) {
-                System.out.println("Conexión exitosa");
-            }
+//            if ( connection != null ) {
+//                System.out.println("Conexión exitosa");
+//            }
 
         } catch (Exception e) {
             System.out.println("Conexión fallida");

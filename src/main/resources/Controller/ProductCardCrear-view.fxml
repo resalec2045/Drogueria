@@ -36,7 +36,7 @@
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
                   <AnchorPane prefHeight="13.0" prefWidth="257.0" />
                   <TextField fx:id="nombreProducto" styleClass="search__container" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Codigo" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
                   <AnchorPane prefHeight="20.0" prefWidth="257.0" />
                   <TextField fx:id="descripcion" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Precio" />
